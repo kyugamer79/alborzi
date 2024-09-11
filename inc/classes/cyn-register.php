@@ -33,6 +33,8 @@ if (! class_exists('cyn_register')) {
 		public function cyn_taxonomy_register()
 		{
 			// $this->cyn_make_taxonomy( 'demo_taxonomy', 'demo', 'demos' , ['demo_post_type'] )
+			$this->cyn_make_taxonomy(CYN_SERVICE_CATEGORY_TAXONOMY, 'دسته بندی', 'دسته های خدمات', [CYN_SERVICE_POST_TYPE]);
+			$this->cyn_make_taxonomy(CYN_SAMPLE_CATEGORY_TAXONOMY, 'دسته بندی', 'دسته های نمونه کار', [CYN_SAMPLE_POST_TYPE]);
 		}
 
 		public function cyn_term_register()

@@ -23,11 +23,11 @@
     <div>
         <div class="flex flex-col h-full justify-between text-xl text-zinc-400 ">
             <?php foreach ($mobile_menu as $index => $menu_item): ?>
-            <a href="<?php echo $menu_item->url ?>">
-                <span>
-                    <?php echo $menu_item->title ?>
-                </span>
-            </a>
+                <a href="<?php echo $menu_item->url ?>">
+                    <span>
+                        <?php echo $menu_item->title ?>
+                    </span>
+                </a>
             <?php endforeach; ?>
         </div>
     </div>

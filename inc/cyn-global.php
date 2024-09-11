@@ -17,3 +17,5 @@ define('CYN_MOBILE_MENU', 'mobile_header');
 
 
 //Taxonomies
+define('CYN_SERVICE_CATEGORY_TAXONOMY', 'service-cat');
+define('CYN_SAMPLE_CATEGORY_TAXONOMY', 'sample-cat');

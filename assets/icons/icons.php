@@ -1,4 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="height: 0; width: 0; position: absolute;">
+    <symbol id="icon-chevron-left" viewBox="0 0 18 18">
+        <title>chevron left</title>
+        <g class="nc-icon-wrapper">
+            <path
+                d="M11.5,16c-.192,0-.384-.073-.53-.22l-6.25-6.25c-.293-.293-.293-.768,0-1.061L10.97,2.22c.293-.293,.768-.293,1.061,0s.293,.768,0,1.061l-5.72,5.72,5.72,5.72c.293,.293,.293,.768,0,1.061-.146,.146-.338,.22-.53,.22Z"
+                fill="currentColor" stroke="none"></path>
+        </g>
+    </symbol>
     <symbol id="icon-xmark" viewBox="0 0 18 18">
         <title>xmark</title>
         <g class="nc-icon-wrapper">
