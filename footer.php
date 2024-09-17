@@ -1,8 +1,10 @@
 <?php $render_template = $args['render_template'] ?? true ?>
 
-<?php if ( $render_template ) : ?>
-	<footer>
+<?php if ($render_template): ?>
 
+	<footer>
+		<?php cyn_get_part('/footer/desktop-footer') ?>
+		<?php cyn_get_part('/footer/mobile-footer') ?>
 	</footer>
 <?php endif; ?>
 

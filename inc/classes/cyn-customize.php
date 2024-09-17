@@ -1,6 +1,6 @@
 <?php
 
-if (! class_exists('cyn_customize')) {
+if (!class_exists('cyn_customize')) {
 	class cyn_customize
 	{
 		function __construct()
@@ -12,6 +12,7 @@ if (! class_exists('cyn_customize')) {
 		{
 
 			$this->cyn_register_panel_header($wp_customize);
+			$this->cyn_register_panel_footer($wp_customize);
 		}
 
 		/**
@@ -81,7 +82,7 @@ if (! class_exists('cyn_customize')) {
 				]
 			);
 
-			$this->cyn_add_control($wp_customize, 'desktop_header_section', 'text', 'text_control_1', ' شماره تماس');
+			$this->cyn_add_control($wp_customize, 'desktop_header_section', 'text', 'desktop_header_phone', ' شماره تماس');
 
 			$wp_customize->add_section(
 				'desktop_menu_section',
@@ -92,13 +93,78 @@ if (! class_exists('cyn_customize')) {
 				]
 			);
 			$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', 'up_section_title', 'تیتر سمت چپ بالا');
+
+			for ($i = 1; $i <= 3; $i++) {
+				$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', "title_$i", "تیتر $i");
+				$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', "title_link_$i", "لینک تیتر $i");
+			}
+
 			$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', 'down_section_title', 'تیتر سمت چپ پایین');
 			$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', 'desktop_menu_phone', ' شماره تماس');
 			$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', 'desktop_menu_mail', 'ایمیل');
-			for ($i = 1; $i <= 5; $i++) {
+			for ($i = 1; $i <= 4; $i++) {
 				$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'file', "icon_img_$i", "آیکون شبکه اجتماعی $i");
 				$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', "icon_text_$i", "لینک شبکه اجتماعی $i");
 			}
+		}
+
+		private function cyn_register_panel_footer($wp_customize)
+		{
+
+			$wp_customize->add_panel(
+				'cyn_footer_panel',
+				[
+					'title' => 'تنظیمات فوتر',
+					'priority' => 1
+				]
+			);
+
+			$wp_customize->add_section(
+				'desktop_footer_section',
+				[
+					'title' => 'فوتر',
+					'priority' => 1,
+					'panel' => 'cyn_footer_panel'
+				]
+			);
+
+			$this->cyn_add_control($wp_customize, 'desktop_footer_section', 'text', 'footer_title', 'تیتر فوتر');
+
+			$wp_customize->add_section(
+				'desktop_footer_col_4',
+				[
+					'title' => 'تنظیمات ستون ۴',
+					'priority' => 2,
+					'panel' => 'cyn_footer_panel'
+				]
+			);
+
+			$this->cyn_add_control($wp_customize, 'desktop_footer_col_4', 'text', 'footer_title_phone', 'تیتر شماره');
+
+			$wp_customize->add_section(
+				'desktop_footer_col_5',
+				[
+					'title' => 'تنظیمات ستون ۵',
+					'priority' => 2,
+					'panel' => 'cyn_footer_panel'
+				]
+			);
+
+			$this->cyn_add_control($wp_customize, 'desktop_footer_col_5', 'text', 'footer_title_email', 'تیتر ایمیل');
+
+
+			$wp_customize->add_section(
+				'desktop_footer_col_6',
+				[
+					'title' => 'تنظیمات ستون ۶',
+					'priority' => 2,
+					'panel' => 'cyn_footer_panel'
+				]
+			);
+
+			$this->cyn_add_control($wp_customize, 'desktop_footer_col_6', 'text', 'footer_address_title', 'تیتر آدرس');
+			$this->cyn_add_control($wp_customize, 'desktop_footer_col_6', 'text', 'footer_address', 'آدرس');
+
 		}
 	}
 }

@@ -21,6 +21,7 @@
     "zip-build": "^1.8.0"
   },
   "dependencies": {
+    "esbuild": "^0.23.1",
     "gsap": "^3.12.5",
     "swiper": "^11.1.12"
   },

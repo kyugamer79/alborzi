@@ -36,7 +36,7 @@
     <!-- logo & call -->
     <div class="flex gap-5 items-center">
         <!-- call -->
-        <a href="<?php echo get_option('text_control') ?>">
+        <a href="<?php echo 'tel:' . get_option('desktop_header_phone') ?>">
             <div class="border bottom-1 rounded-full border-slate-100 p-3">
                 <svg class="icon">
                     <use href="#icon-Phone,-Call-11" />

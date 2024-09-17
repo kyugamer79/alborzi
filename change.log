@@ -1,1 +1,14 @@
+@version 0.0.0.1
+-- NEW : 
+. add desktop and mobile header => partials/parts/header/
+
+@version 0.0.0.2
+-- NEW : 
+. add desktop and mobile menu => partials/parts/footer/
+
+@version 0.0.0.3
+-- NEW : 
+. add desktop and mobile footer => partials/parts/footer/
+
+
 

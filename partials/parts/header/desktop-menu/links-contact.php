@@ -1,3 +1,6 @@
+<?php $desktop_menu = cyn_get_menu_items_by_slug(CYN_DESKTOP_MENU); ?>
+
+
 <div class="col-span-1 grid grid-rows-2 w-full">
 
     <!-- Links -->
@@ -9,9 +12,11 @@
 
         <!-- Options -->
         <div class="grid gap-8 text-zinc-400">
-
-            <div>سوالات متداول</div>
-            <div>استعلام هزینه</div>
+            <?php for ($i = 1; $i <= 3; $i++): ?>
+                <a class="hover:text-slate-950 transition-all duration-500" href="<?php echo get_option("title_link_$i", '#') ?>">
+                    <?php echo get_option("title_$i")?>
+                </a>
+            <?php endfor ?>
         </div>
     </div>
 
@@ -31,7 +36,7 @@
                             <use href="#icon-Arrow-17" />
                         </svg>
 
-                        <span class=" underline">
+                        <span class="underline">
                             <?php echo get_option('desktop_menu_phone') ?>
                         </span>
                     </div>
@@ -55,11 +60,11 @@
 
             <!-- Social Medias -->
             <div class="flex flex-row gap-4">
-                <?php for ($i = 1; $i <= 5; $i++) : ?>
-                <a class="hover:scale-110 transition-all duration-500"
-                    href="<?php echo get_option("icon_text_$i", '#') ?>">
-                    <img src="<?php echo get_option("icon_img_$i", '#') ?>" alt="">
-                </a>
+                <?php for ($i = 1; $i <= 4; $i++): ?>
+                    <a class="hover:scale-110 transition-all duration-500"
+                        href="<?php echo get_option("icon_text_$i", '#') ?>">
+                        <img src="<?php echo get_option("icon_img_$i", '#') ?>" alt="">
+                    </a>
                 <?php endfor ?>
             </div>
         </div>

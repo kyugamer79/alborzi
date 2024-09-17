@@ -20,43 +20,29 @@
     </div>
 
     <!-- Menu -->
-    <!-- <div>
-        <div class="flex flex-col h-full justify-between text-xl text-zinc-400 ">
-            <?php //foreach ($mobile_menu as $index => $menu_item): 
-            ?>
-            <a href="<?php //echo $menu_item->url 
-                        ?>">
-                <span>
-                    <?php //echo $menu_item->title 
-                    ?>
-                </span>
-            </a>
-            <?php //endforeach; 
-            ?>
-        </div>
-    </div> -->
 
     <div class="grid gap-2">
-        <?php foreach ($mobile_menu as $menu_item) : ?>
-        <div class="group">
-            <a href="<?php echo $menu_item->url ?>"
-                class="flex justify-between items-center p-2 text-xl text-slate-400 hover:text-slate-950">
-                <?php echo $menu_item->title ?>
-                <?php echo $menu_item->child_items ? '<svg class="icon size-4 group-hover:rotate-180 transition-transform"><use href="#icon-chevron-down"/></svg>' : '' ?>
-            </a>
+        <?php foreach ($mobile_menu as $menu_item): ?>
 
-            <?php if ($menu_item->child_items) : ?>
-            <div class="grid transition-all grid-rows-[0fr] group-hover:grid-rows-[1fr] bg-slate-200 rounded-2xl">
-                <div class="overflow-hidden grid gap-2">
-                    <?php foreach ($menu_item->child_items as $child) : ?>
-                    <a class=" p-2 rounded-md block text-zinc-500 px-3 py-4"
-                        href="<?php echo $child->url ?>"><?php echo $child->title ?></a>
-                    <?php endforeach; ?>
-                </div>
+            <div class="group">
+                <a href="<?php echo $menu_item->url ?>"
+                    class="flex justify-start items-center gap-2 p-2 text-xl text-slate-400 hover:text-slate-950">
+                    <?php echo $menu_item->title ?>
+                    <?php echo $menu_item->child_items ? '<svg class="icon size-4 group-hover:-rotate-90"><use href="#icon-chevron-left" /></svg>' : '' ?>
+                </a>
+
+                <?php if ($menu_item->child_items): ?>
+                    <div class="grid transition-all grid-rows-[0fr] group-hover:grid-rows-[1fr] rounded-2xl bg-zinc-100">
+                        <div class="overflow-hidden grid gap-2 rounded-2xl divide-y-2 divide-slate-200">
+                            <?php foreach ($menu_item->child_items as $child): ?>
+                                <a class="p-2 block text-zinc-500 px-3 py-4 "
+                                    href="<?php echo $child->url ?>"><?php echo $child->title ?></a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
             </div>
-            <?php endif; ?>
-
-        </div>
         <?php endforeach; ?>
     </div>
 

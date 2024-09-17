@@ -20,6 +20,9 @@ if (! class_exists('cyn_register')) {
 			register_nav_menus([
 				CYN_DESKTOP_MENU => "منوی دسکتاپ",
 				CYN_MOBILE_MENU => "منوی موبایل",
+				CYN_FOOTER_MENU_1 => "منوی فوتر ۱",
+				CYN_FOOTER_MENU_2 => "منوی فوتر ۲",
+				CYN_FOOTER_MOBILE_MENU => "منوی فوتر موبایل",
 			]);
 		}
 
@@ -49,7 +52,7 @@ if (! class_exists('cyn_register')) {
 		{
 			//This pages can't be removed
 
-			if (is_null(get_page_by_path('home'))) {
+			if (is_null(get_page_by_path('front-page'))) {
 				wp_insert_post([
 					'post_type' => 'page',
 					'post_status' => 'publish',
