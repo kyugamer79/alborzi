@@ -1,6 +1,6 @@
 <?php $footer_mobile_menu = cyn_get_menu_items_by_slug(CYN_FOOTER_MOBILE_MENU) ?>
 
-<div class="container hidden max-[767px]:flex flex-col gap-6">
+<div class="container hidden max-[767px]:flex flex-col gap-6 mt-20">
 
     <!-- Footer Title -->
     <div class="text-4xl text-center text-neutral-400 hover:text-slate-950 transition-all duration-500 cursor-default">

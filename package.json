@@ -1,6 +1,6 @@
 {
   "name": "Alborzi",
-  "version": "0.0.0",
+  "version": "0.0.0.4",
   "description": "",
   "author": "cyan-dm",
   "scripts": {
@@ -23,7 +23,7 @@
   "dependencies": {
     "esbuild": "^0.23.1",
     "gsap": "^3.12.5",
-    "swiper": "^11.1.12"
+    "swiper": "^11.1.14"
   },
   "browserslist": [
     "> 1%",

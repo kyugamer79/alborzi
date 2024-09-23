@@ -1,6 +1,6 @@
 <?php $mobile_menu = cyn_get_menu_items_by_slug(CYN_MOBILE_MENU) ?>
 
-<div class="fixed space-y-5 inset-0 p-5 pb-10 bg-gray-50 [clip-path:polygon(0_0,_100%_0_,_100%_0_,_0_0)] duration-700 transition-all"
+<div class="fixed z-50 space-y-5 inset-0 p-5 pb-10 bg-gray-50 [clip-path:polygon(0_0,_100%_0_,_100%_0_,_0_0)] duration-700 transition-all"
     id="mobileMenu">
 
     <div class="flex gap-4 justify-between">

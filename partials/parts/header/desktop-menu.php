@@ -1,4 +1,4 @@
-<div class="fixed inset-0 gap-20 bg-gray-50 duration-700 transition-all py-7 [clip-path:polygon(0_0,_100%_0_,_100%_0_,_0_0)]"
+<div class="fixed z-50 inset-0 gap-20 bg-gray-50 duration-700 transition-all py-7 [clip-path:polygon(0_0,_100%_0_,_100%_0_,_0_0)]"
     id="desktopMenu">
 
     <div class="container flex flex-col gap-20">

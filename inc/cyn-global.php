@@ -8,7 +8,7 @@ defined('CYN_ACF_URL') || define('CYN_ACF_URL', get_stylesheet_directory_uri() .
 
 //Post types
 define('CYN_SERVICE_POST_TYPE', 'service');
-define('CYN_SAMPLE_POST_TYPE', 'sample');
+define('CYN_PORTFOLIO_POST_TYPE', 'portfolio');
 
 
 //Menu
@@ -21,4 +21,9 @@ define('CYN_FOOTER_MOBILE_MENU', 'footer_mobile_menu');
 
 //Taxonomies
 define('CYN_SERVICE_CATEGORY_TAXONOMY', 'service-cat');
-define('CYN_SAMPLE_CATEGORY_TAXONOMY', 'sample-cat');
+define('CYN_PORTFOLIO_CATEGORY_TAXONOMY', 'portfolio-cat');
+
+// Pages
+define( 'CYN_FRONT_PAGE', 'front-page' );
+define( 'CYN_ABOUT_US_PAGE', 'about-us' );
+define( 'CYN_CONTACT_US_PAGE', 'contact-us' );

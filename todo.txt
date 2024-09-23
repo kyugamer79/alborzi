@@ -1,3 +1,6 @@
-* بخش چند زبانه سایت 
-*مدل منوی موبایل باید عوض شود
-* هاور تیتر فوتر درست شود
+*Multilingual feature
+*Mobile menu appreance onclick
+*Footer Title Hover word by word
+*Footer Email Section problem by minimizing viewport 
+*swiper animation
+*Mobile Archive Service Scroll Animation

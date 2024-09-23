@@ -1,6 +1,6 @@
 <?php
 
-if (! class_exists('cyn_register')) {
+if (!class_exists('cyn_register')) {
 	class cyn_register
 	{
 		function __construct()
@@ -30,14 +30,13 @@ if (! class_exists('cyn_register')) {
 		{
 			// $this->cyn_make_post_type('demo_post_type' , 'demo' , 'demos')
 			$this->cyn_make_post_type(CYN_SERVICE_POST_TYPE, 'خدمت', 'خدمات', 'dashicons-admin-generic', ['title', 'thumbnail', 'editor']);
-			$this->cyn_make_post_type(CYN_SAMPLE_POST_TYPE, 'نمونه کار', 'نمونه کارها', 'dashicons-format-aside', ['title', 'thumbnail', 'editor']);
+			$this->cyn_make_post_type(CYN_PORTFOLIO_POST_TYPE, 'نمونه کار', 'نمونه کارها', 'dashicons-format-aside', ['title', 'thumbnail', 'editor']);
 		}
 
 		public function cyn_taxonomy_register()
 		{
 			// $this->cyn_make_taxonomy( 'demo_taxonomy', 'demo', 'demos' , ['demo_post_type'] )
-			$this->cyn_make_taxonomy(CYN_SERVICE_CATEGORY_TAXONOMY, 'دسته بندی', 'دسته های خدمات', [CYN_SERVICE_POST_TYPE]);
-			$this->cyn_make_taxonomy(CYN_SAMPLE_CATEGORY_TAXONOMY, 'دسته بندی', 'دسته های نمونه کار', [CYN_SAMPLE_POST_TYPE]);
+			$this->cyn_make_taxonomy(CYN_PORTFOLIO_CATEGORY_TAXONOMY, 'دسته بندی', 'دسته های نمونه کار', [CYN_PORTFOLIO_POST_TYPE]);
 		}
 
 		public function cyn_term_register()
@@ -52,13 +51,36 @@ if (! class_exists('cyn_register')) {
 		{
 			//This pages can't be removed
 
-			if (is_null(get_page_by_path('front-page'))) {
+			if (is_null(get_page_by_path(CYN_FRONT_PAGE))) {
+				$front_page_id = wp_insert_post([
+					'post_type' => 'page',
+					'post_status' => 'publish',
+					'post_title' => 'صفحه اصلی',
+					'post_name' => CYN_FRONT_PAGE,
+					'page_template' => 'templates/' . CYN_FRONT_PAGE . '.php'
+				]);
+
+				update_option('show_on_front', 'page');
+				update_option('page_on_front', $front_page_id);
+			}
+
+			if (is_null(get_page_by_path(CYN_ABOUT_US_PAGE))) {
 				wp_insert_post([
 					'post_type' => 'page',
 					'post_status' => 'publish',
-					'post_title' => 'Front Page',
-					'post_name' => 'front-page',
-					'page_template' => 'templates/front-page.php'
+					'post_title' => 'درباره ما',
+					'post_name' => CYN_ABOUT_US_PAGE,
+					'page_template' => 'templates/' . CYN_ABOUT_US_PAGE . '.php'
+				]);
+			}
+
+			if (is_null(get_page_by_path(CYN_CONTACT_US_PAGE))) {
+				wp_insert_post([
+					'post_type' => 'page',
+					'post_status' => 'publish',
+					'post_title' => 'تماس با ما',
+					'post_name' => CYN_CONTACT_US_PAGE,
+					'page_template' => 'templates/' . CYN_CONTACT_US_PAGE . '.php'
 				]);
 			}
 		}
