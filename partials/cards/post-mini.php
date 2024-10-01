@@ -1,0 +1,73 @@
+<?php $post_categories = get_the_category(); ?>
+
+<?php $post_content = get_the_content(); ?>
+
+<div class="grid grid-cols-3 gap-4">
+    <!-- Content -->
+    <div class="col-span-2 grid gap-2">
+        <!-- Date & Category -->
+        <div class="flex flex-row justify-start items-center gap-5">
+            <!-- Date -->
+            <div class="text-xs text-neutral-400 before:">
+                <?php //echo get_the_date() ?>
+            </div>
+
+            <!-- Category -->
+            <div>
+                <?php foreach ($post_categories as $term): ?>
+                    <a href="<?php echo get_term_link($term) ?>" class="text-xs text-zinc-900">
+                        <?php if ($term === end($post_categories)): ?>
+                            <?php echo $term->name ?>
+                        <?php else: ?>
+                            <?php echo $term->name . ', ' ?>
+                        <?php endif; ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+
+        </div>
+
+        <!-- Title & Content-->
+        <div class="grid gap-1">
+            <!-- Title -->
+            <div clas="text-lg">
+                <?php echo the_title() ?>
+            </div>
+
+            <!-- Content -->
+            <div class="text-xs text-zinc-500">
+                <?php echo wp_trim_words($post_content, 8) ?>
+            </div>
+        </div>
+
+        <!-- Views & Btn  -->
+        <div class="flex flex-row justify-between">
+
+            <!-- Btn -->
+            <div class="border border-slate-200 rounded-full p-1">
+                <a href="<?php echo get_the_permalink() ?>">
+                    <span>
+                        <svg class="icon rotate-45 object">
+                            <use href="#icon-Arrow-17" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Views -->
+            <div>
+                <svg class="icon">
+                    <use href="#icon-Eye-4" />
+                </svg>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Image -->
+    <div class="col-span-1">
+        <a href="<?php echo get_permalink() ?>">
+            <?php echo get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'rounded-xl aspect-square object-cover h-full']) ?>
+        </a>
+    </div>
+</div>

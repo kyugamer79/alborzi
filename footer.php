@@ -1,5 +1,6 @@
 <?php $render_template = $args['render_template'] ?? true ?>
 
+</main>
 <?php if ($render_template): ?>
 
 	<footer>

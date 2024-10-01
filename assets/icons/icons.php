@@ -121,4 +121,34 @@
             </path>
         </g>
     </symbol>
+    <symbol id="icon-Eye-4" viewBox="0 0 24 25">
+        <title>Eye 4</title>
+        <g class="nc-icon-wrapper">
+            <path
+                d="M14.122 10.3407C15.293 11.5117 15.293 13.4127 14.122 14.5857C12.951 15.7567 11.05 15.7567 9.87703 14.5857C8.70603 13.4147 8.70603 11.5137 9.87703 10.3407C11.05 9.16769 12.95 9.16769 14.122 10.3407"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M3 12.4607C3 11.8017 3.152 11.1497 3.446 10.5487V10.5487C4.961 7.45169 8.309 5.46069 12 5.46069C15.691 5.46069 19.039 7.45169 20.554 10.5487V10.5487C20.848 11.1497 21 11.8017 21 12.4607C21 13.1197 20.848 13.7717 20.554 14.3727V14.3727C19.039 17.4697 15.691 19.4607 12 19.4607C8.309 19.4607 4.961 17.4697 3.446 14.3727V14.3727C3.152 13.7717 3 13.1197 3 12.4607Z"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+        </g>
+    </symbol>
+    <symbol id="icon-Reply,-Share,-Circle" viewBox="0 0 24 25">
+        <title>Reply, Share, Circle</title>
+        <g class="nc-icon-wrapper">
+            <path
+                d="M11 14.7897C15.594 14.7897 19.499 17.1527 21 20.4607V19.4537C21 13.4377 16.579 8.53069 11 8.16269V3.46069L3 11.4607L11 19.4607V14.7937"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+        </g>
+    </symbol>
+    <symbol id="icon-Quote" viewBox="0 0 24 25">
+        <title>Quote</title>
+        <g class="nc-icon-wrapper">
+            <path
+                d="M14 13.9607H19C19.552 13.9607 20 14.4087 20 14.9607V18.9607C20 19.5127 19.552 19.9607 19 19.9607H15C14.448 19.9607 14 19.5127 14 18.9607V13.9607C14 7.96069 15 6.96069 18 4.96069"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            <path
+                d="M4 13.9607H9C9.552 13.9607 10 14.4087 10 14.9607V18.9607C10 19.5127 9.552 19.9607 9 19.9607H5C4.448 19.9607 4 19.5127 4 18.9607V13.9607C4 7.96069 5 6.96069 8 4.96069"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+        </g>
+    </symbol>
 </svg>

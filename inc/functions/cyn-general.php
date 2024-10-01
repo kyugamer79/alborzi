@@ -66,3 +66,7 @@ function cyn_get_part($name, $args = [])
 {
     get_template_part('/partials/parts/' . $name, null, $args);
 }
+
+function cyn_get_page( $name, $args = [] ) {
+	get_template_part( '/partials/pages/' . $name, null, $args );
+}

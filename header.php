@@ -17,10 +17,11 @@
     </div>
 
     <?php if ($render_template) : ?>
-    <header>
-        <?php cyn_get_part('/header/desktop-header') ?>
-        <?php cyn_get_part('/header/mobile-header') ?>
-        <?php cyn_get_part('/header/desktop-menu') ?>
-        <?php cyn_get_part('/header/mobile-menu') ?>
-    </header>
-    <?php endif; ?>
+        <header>
+            <?php cyn_get_part('/header/desktop-header') ?>
+            <?php cyn_get_part('/header/mobile-header') ?>
+            <?php cyn_get_part('/header/desktop-menu') ?>
+            <?php cyn_get_part('/header/mobile-menu') ?>
+        </header>
+        <?php endif; ?>
+        <main class="min-h-screen">

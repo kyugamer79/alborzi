@@ -20,7 +20,6 @@ define('CYN_FOOTER_MOBILE_MENU', 'footer_mobile_menu');
 
 
 //Taxonomies
-define('CYN_SERVICE_CATEGORY_TAXONOMY', 'service-cat');
 define('CYN_PORTFOLIO_CATEGORY_TAXONOMY', 'portfolio-cat');
 
 // Pages

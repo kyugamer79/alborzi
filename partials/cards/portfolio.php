@@ -1,36 +1,33 @@
 <?php
-$postId = $args['post-id'] ?? get_the_ID();
 
-if ($postId === 0) {
-    throw new ErrorException('post id is invalid', 0, E_WARNING);
-}
+$portfolioLocation = get_field('portfolio_location');
 
-$terms = get_the_terms($postId, CYN_PORTFOLIO_CATEGORY_TAXONOMY);
+$portfolioNumber = get_field('portfolio_number');
 
 ?>
+<a href="<?php echo get_the_permalink() ?>">
+    <div class="group hover:cursor-pointer flex flex-col justify-end min-h-[350px] rounded-[40px] bg-cover p-5 overflow-hidden after:content-[''] after:inset-0 after:absolute relative  after:bg-gradient-to-t after:from-black/80 after:via-black/50 after:to-black/0 isolate after:rounded-[inherit] after:z-[-1]"
+        style="background-image: url('<?php echo get_the_post_thumbnail_url() ?>');">
 
-<div class="rounded-2xl overflow-hidden flex flex-col justify-between text-primary-100 min-h-[360px] bg-cover p-5 after:content-[''] after:inset-0 after:absolute relative after:bg-accent-0/35 after:-z-[1] isolate hover:rotate-2 transition-all duration-300 "
-    style="background-image: url('<?php echo get_the_post_thumbnail_url($postId) ?>');">
-    <div class="">
-        <div class="text-caption">
-            <?php if (!empty($terms)) : ?>
-            <?php foreach ($terms as $index => $term) : ?>
-            <?php
-                    echo $term->name;
-                    echo $index === array_key_last($terms) ? '' : ' • ';
-                    ?>
-            <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
+        <!-- Caption -->
+        <div class="flex flex-row justify-between items-end relative z-10">
+            <!-- Name & Location -->
+            <div>
+                <!-- Name -->
+                <span class="text-xl text-white">
+                    <?php echo get_the_title() . '،' ?>
+                </span>
 
-        <div class="text-h6">
-            <?php echo get_the_title($postId) ?>
+                <!-- Location -->
+                <span class="text-sm text-gray-200">
+                    <?php echo $portfolioLocation ?>
+                </span>
+            </div>
+
+            <!-- Number -->
+            <div class="text-8xl text-white/40 group-hover:text-white transition-all duration-300">
+                <?php echo $portfolioNumber ?>
+            </div>
         </div>
     </div>
-
-    <div class="flex justify-end">
-        <cyn-button type="secondary" size="md" href="<?php echo get_permalink($postId) ?>">
-            <?php _e('مشاهده جزئیات', 'cyn-dm') ?>
-        </cyn-button>
-    </div>
-</div>
+</a>

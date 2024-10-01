@@ -6,43 +6,17 @@ function cyn_register_acf()
 	if (!function_exists('acf_add_local_field_group')) {
 		return;
 	}
-	cyn_register_acf_company_settings();
 	cyn_register_acf_service_settings();
+	cyn_register_acf_portfolio_settings();
 
-}
-
-function cyn_register_acf_company_settings()
-{
-	$fields = [
-		cyn_acf_add_number('established_year', 'Established Year'),
-		cyn_acf_add_text('country', 'country'),
-		cyn_acf_add_text('location', 'location'),
-		cyn_acf_add_text('phone', 'phone'),
-		cyn_acf_add_image('flag', 'Flag'),
-		cyn_acf_add_image('logo', 'Logo'),
-		cyn_acf_add_options('verified_type', 'Verified Type', ['star-supplier', 'supplier']),
-		cyn_acf_add_url('website', 'website'),
-		cyn_acf_add_color('color', 'Color'),
-
-	];
-	$location = [
-		[
-			[
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'post',
-			],
-		],
-	];
-
-	cyn_register_acf_group('Company Settings', $fields, $location);
 }
 function cyn_register_acf_service_settings()
 {
 	$fields = [
 
 		cyn_acf_add_tab('آرشیو'),
-		cyn_acf_add_text('archive_txt', 'توضیحات آرشیو')
+		cyn_acf_add_text('archive_txt', 'توضیحات آرشیو'),
+		cyn_acf_add_taxonomy('portfolio', 'نمونه کار',CYN_PORTFOLIO_CATEGORY_TAXONOMY)
 
 	];
 
@@ -73,6 +47,30 @@ function cyn_register_acf_service_settings()
 	];
 
 	cyn_register_acf_group('تنظیمات خدمات', $fields, $location);
+}
+
+function cyn_register_acf_portfolio_settings()
+{
+	$fields = [
+
+		cyn_acf_add_tab('مکان'),
+		cyn_acf_add_text('portfolio_location', 'مکان پروڑه', 0, 50),
+		cyn_acf_add_tab('شماره'),
+		cyn_acf_add_text('portfolio_number', 'شماره پروڑه', 0, 50),
+
+	];
+
+	$location = [
+		[
+			[
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => CYN_PORTFOLIO_POST_TYPE,
+			],
+		],
+	];
+
+	cyn_register_acf_group('تنظیمات نمونه کار', $fields, $location);
 }
 
 

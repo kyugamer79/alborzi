@@ -1,6 +1,3 @@
-<?php defined('ABSPATH') || exit; ?>
+<?php 
 
-<?php get_header() ?>
-
-
-<?php get_footer() ?>
+get_template_part('archive');

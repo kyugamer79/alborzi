@@ -1,16 +1,6 @@
 <?php get_header() ?>
 
-<?php
-
-$services = get_posts([
-    'post_type' => CYN_SERVICE_POST_TYPE,
-    'posts_per_page' => -1,
-]);
-
-?>
-
-
-<main class="container">
+<section class="container">
 
     <!-- Title -->
     <section class="text-5xl">
@@ -24,18 +14,21 @@ $services = get_posts([
     <!-- Options -->
     <section class="grid gap-14 max-[767px]:gap-0 max-[767px]:divide-y">
 
-        <?php foreach ($services as $service): ?>
+        <?php if (have_posts()): ?>
 
-            <?php cyn_get_card('service') ?>
+            <?php while (have_posts()): ?>
 
-        <?php endforeach; ?>
+                <?php the_post() ?>
 
-        <?php wp_reset_postdata()?>
+                <?php cyn_get_card('service') ?>
+
+            <?php endwhile; ?>
+
+        <?php endif ?>
 
     </section>
 
-</main>
-
+</section>
 
 
 <?php get_footer() ?>
