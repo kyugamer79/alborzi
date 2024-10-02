@@ -20,6 +20,7 @@ module.exports = {
   },
   corePlugins: {
     aspectRatio: false,
+    scrollBehavior: true,
   },
   plugins: [
     require('@tailwindcss/typography'),

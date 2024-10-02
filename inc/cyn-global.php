@@ -9,6 +9,7 @@ defined('CYN_ACF_URL') || define('CYN_ACF_URL', get_stylesheet_directory_uri() .
 //Post types
 define('CYN_SERVICE_POST_TYPE', 'service');
 define('CYN_PORTFOLIO_POST_TYPE', 'portfolio');
+define('CYN_FAQ_POST_TYPE', 'faq');
 
 
 //Menu
