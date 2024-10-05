@@ -151,4 +151,12 @@
                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
         </g>
     </symbol>
+    <symbol id="icon-Clip,-Attachment-3" viewBox="0 0 24 25">
+        <title>Clip, Attachment 3</title>
+        <g class="nc-icon-wrapper">
+            <path
+                d="M15 8.46064L11.794 11.6666C10.803 12.6576 10.803 14.2636 11.794 15.2546V15.2546C12.785 16.2456 14.391 16.2456 15.382 15.2546L19.72 10.9166C21.426 9.21064 21.426 6.44564 19.72 4.73964V4.73964C18.014 3.03364 15.249 3.03364 13.543 4.73964L4.27804 14.0046C2.57204 15.7106 2.57204 18.4756 4.27804 20.1816V20.1816C5.98404 21.8876 8.74904 21.8876 10.455 20.1816L12.087 18.5496"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+        </g>
+    </symbol>
 </svg>

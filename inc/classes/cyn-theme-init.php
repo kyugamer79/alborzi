@@ -1,6 +1,6 @@
 <?php
 
-if (! class_exists('cyn_theme_init')) {
+if (!class_exists('cyn_theme_init')) {
 	class cyn_theme_init
 	{
 		public $build, $ver;
@@ -18,6 +18,7 @@ if (! class_exists('cyn_theme_init')) {
 			add_action('after_setup_theme', [$this, 'cyn_theme_setup']);
 			add_filter('wp_check_filetype_and_ext', [$this, 'cyn_allow_svg'], 10, 4);
 			add_filter('upload_mimes', [$this, 'cyn_mime_types']);
+			add_filter('script_loader_tag', [$this ,'add_module_to_dotlottie_script'], 10, 3);
 
 			$this->cyn_register_acf();
 		}
@@ -56,6 +57,13 @@ if (! class_exists('cyn_theme_init')) {
 			wp_dequeue_style('wp-block-library');
 
 			wp_enqueue_script('cyn-theme', get_stylesheet_directory_uri() . $js_path, ['jquery'], $this->ver, true);
+			wp_enqueue_script(
+				'dotlottie-player', 
+				'https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs',
+				array(), 
+				null, 
+				true 
+			);
 			wp_dequeue_script('global-styles');
 		}
 
@@ -107,5 +115,14 @@ if (! class_exists('cyn_theme_init')) {
 			add_filter('acf/settings/show_updates', '__return_false', 100);
 			add_filter('acf/settings/show_admin', '__return_false', 100);
 		}
+
+		public function add_module_to_dotlottie_script($tag, $handle, $src) {
+			// چک کنید که آیا این اسکریپت همان اسکریپتی است که می‌خواهیم نوع آن را تغییر دهیم
+			if ('dotlottie-player' === $handle) {
+				// تغییر نوع اسکریپت به module
+				$tag = '<script type="module" src="' . esc_url($src) . '"></script>';
+			}
+			return $tag;
+		}		
 	}
 }

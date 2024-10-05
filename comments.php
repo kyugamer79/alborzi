@@ -21,7 +21,7 @@
             'class_container' => '',
             'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title py-2 hidden">',
             'title_reply_after' => '</h3>',
-            'submit_field' => '<div class="grid justify-end order-3 cursor-pointer">
+            'submit_field' => '<div class="grid justify-end order-3">
             <div class="form-submit flex items-center gap-2 cursor-pointer">
                         <svg class="icon rotate-45 object border border-slate-200 rounded-full p-2 size-12"><use href="#icon-Arrow-17"/></svg>
                     <div class="text-zinc-600 text-sm cursor-pointer">%1$s %2$s</div>

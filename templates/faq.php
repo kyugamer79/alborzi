@@ -3,7 +3,6 @@
 
 get_header();
 
-// Query the FAQ posts
 $questions = new WP_Query([
     'post_type' => CYN_FAQ_POST_TYPE,
     'posts_per_page' => -1,
@@ -14,10 +13,10 @@ $questions = new WP_Query([
 <section class="container grid gap-8">
 
     <!-- Hero Section -->
-    <section class="grid grid-cols-5 items-center">
+    <section class="grid grid-cols-5 items-center" style="background-image: url('<?php echo get_the_post_thumbnail_url($postId) ?>');">
         <!-- Content -->
         <div class="col-span-2 grid gap-3 max-[767px]:col-span-5">
-            <div class="text-7xl max-[767px]:text-3xl text-zinc-900">
+            <div class="text-5xl max-[767px]:text-3xl text-zinc-900">
                 <?php the_title(); ?>
             </div>
 
@@ -27,15 +26,15 @@ $questions = new WP_Query([
 
             <div class="max-[767px]:hidden flex justify-end items-center gap-1 cursor-pointer" id="button">
                 <div>
-                    <a href="#faq-items">
+                    <a href="#faq-items" class="text-zinc-500">
                         <?php _e('سوالتو پیدا کن', 'cyn-dm'); ?>
                     </a>
                 </div>
 
                 <div class="border border-slate-200 rounded-full p-1">
-                    <a href="#faq-items" class="flex items-center"> <!-- Make SVG clickable -->
+                    <a href="#faq-items" class="flex items-center">
                         <span>
-                            <svg class="icon rotate-[136deg] object w-6 h-6">
+                            <svg class="icon rotate-[136deg] object w-8 h-8">
                                 <use href="#icon-Arrow-17" />
                             </svg>
                         </span>
@@ -65,7 +64,7 @@ $questions = new WP_Query([
                 </div>
 
                 <div class="border border-slate-200 rounded-full p-1">
-                    <a href="#faq-items" class="flex items-center"> <!-- Make SVG clickable -->
+                    <a href="#faq-items" class="flex items-center">
                         <span>
                             <svg class="icon rotate-[136deg] object w-6 h-6">
                                 <use href="#icon-Arrow-17" />
@@ -81,17 +80,22 @@ $questions = new WP_Query([
 
     <!-- FAQ Items Section -->
     <section id="faq-items" class="scroll-smooth">
-        <?php if ($questions->have_posts()): ?>
-            <?php while ($questions->have_posts()):
-                $questions->the_post(); ?>
-                <?php cyn_get_card('faq'); ?>
-            <?php endwhile;
-            wp_reset_postdata(); ?>
-        <?php endif; ?>
-    </section>
 
-    <!-- Pagination -->
-    <?php cyn_get_component('pagination'); ?>
+        <?php if ($questions->have_posts()): ?>
+
+            <?php while ($questions->have_posts()):
+
+                $questions->the_post(); ?>
+
+                <?php cyn_get_card('faq'); ?>
+
+            <?php endwhile;
+
+            wp_reset_postdata(); ?>
+
+        <?php endif; ?>
+
+    </section>
 
 </section>
 

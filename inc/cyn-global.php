@@ -1,4 +1,5 @@
 <?php
+define('CYN_THEME_DIR',get_stylesheet_directory_uri());
 //all names in theme
 
 //acf
