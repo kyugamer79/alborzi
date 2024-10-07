@@ -7,6 +7,6 @@
 *Post-mini view count and animation 
 *post-mini category active line 
 *breadcrumb line 
-single blog quotion svg
+*single blog & about us quotion svg
 *service cta lottie file
 *single service swipers (steps and pics)

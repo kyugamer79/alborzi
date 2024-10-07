@@ -4,7 +4,7 @@
 
 <section class="container">
 
-    <section class="grid grid-cols-3 items-center">
+    <section class="grid grid-cols-3 items-start">
 
         <!-- Form -->
         <section class="col-span-3 lg:col-span-2 grid gap-7 max-[1023px]:order-2">
@@ -93,7 +93,7 @@
                         </div>
                         <a href="<?php echo 'mailto:' . get_option('footer_address') ?>">
                             <div
-                                class="flex f-column text-base max-lg:text-sm text-zinc-700 hover:text-slate-950 transition-all duration-500 cursor-pointer">
+                                class="flex f-column text-base max-lg:text-sm text-zinc-700 hover:text-zinc-500 transition-all duration-500 cursor-pointer">
                                 <?php echo get_option('footer_address') ?>
                             </div>
                         </a>
@@ -109,9 +109,9 @@
         </div>
 
         <!-- Animated Image -->
-        <section class="col-span-3 lg:col-span-1 h-[500px]">
+        <section class="col-span-3 lg:col-span-1">
             <dotlottie-player src="<?php echo CYN_THEME_DIR . '/assets/anim/contact-us.lottie' ?>"
-                background="transparent" speed="1" style="width: 100%; height: 600px;" loop autoplay></dotlottie-player>
+                background="transparent" speed="1" style="width: 100%;" loop autoplay></dotlottie-player>
         </section>
 
     </section>

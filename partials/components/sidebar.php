@@ -77,7 +77,7 @@ $publishedPosts = new WP_Query([
 
                 <div class="py-2"></div>
 
-                <div class="grid gap-y-3 divide-y-[1px] divide-primary-90">
+                <div class="grid gap-y-4">
 
                     <?php
                     if ($publishedPosts->have_posts()):

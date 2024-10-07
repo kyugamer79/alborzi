@@ -1,18 +1,25 @@
-@version 0.0.0.1
+@version 0.0.0.5
 -- NEW : 
-. add desktop and mobile header => partials/parts/header/
+. add about us page => templates/about.php
 
-@version 0.0.0.2
+@version 0.0.0.4
 -- NEW : 
-. add desktop and mobile menu => partials/parts/
+. add single service => single.php
 
 @version 0.0.0.3
 -- NEW : 
 . add desktop and mobile footer => partials/parts/footer/
 
-@version 0.0.0.4
+@version 0.0.0.2
 -- NEW : 
-. add single service => single.php
+. add desktop and mobile menu => partials/parts/
+
+@version 0.0.0.1
+-- NEW : 
+. add desktop and mobile header => partials/parts/header/
+
+
+
 
 
 

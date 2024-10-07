@@ -43,9 +43,9 @@ $publishedPosts = get_posts([
             <!-- Meta -->
             <div class="flex flex-row justify-between">
                 <!-- Date -->
-                <div class="text-sm text-neutral-400 flex flex-row items-center justify-center gap-2">
+                <div class="text-sm text-neutral-400 flex flex-row items-baseline justify-center gap-2">
                     <div
-                        class=" bg-teal-600 relative after:absolute after:rounded-full isolate after:-z-10 after:animate-ping after:bg-teal-50 after:content-[''] after:inset-0 rounded-full size-3 flex justify-center items-center">
+                        class=" bg-teal-600 relative after:absolute after:rounded-full isolate after:-z-10 after:animate-pulse after:bg-teal-50 after:content-[''] after:inset-0 after:shadow-xl after:shadow-teal-600/75 rounded-full size-3 flex justify-center items-center">
                     </div>
                     <?php echo get_the_date() ?>
                 </div>
@@ -99,19 +99,5 @@ $publishedPosts = get_posts([
     </section>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php get_footer() ?>
