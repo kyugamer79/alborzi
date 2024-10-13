@@ -1,11 +1,17 @@
-function mouse() {
-	const mouseCursor = document.querySelector('#mouseCursor');
-	if (!mouseCursor) return;
+const customCursor = document.getElementById('custom-cursor');
+const teamSection = document.querySelector('.team-section'); // The section you want to hover
 
-	document.addEventListener('mousemove', (e) => {
-		mouseCursor.style.setProperty('--x', e.clientX + 'px');
-		mouseCursor.style.setProperty('--y', e.clientY + 'px');
-	});
-}
+// Update the cursor position
+document.addEventListener('mousemove', (e) => {
+	customCursor.style.left = `${e.pageX}px`;
+	customCursor.style.top = `${e.pageY}px`;
+});
 
-mouse();
+// Change cursor style on hover
+teamSection.addEventListener('mouseenter', () => {
+	customCursor.classList.add('bg-red-500', 'w-10', 'h-10'); // Change color and size on hover
+});
+
+teamSection.addEventListener('mouseleave', () => {
+	customCursor.classList.remove('bg-red-500', 'w-10', 'h-10'); // Reset on leave
+})

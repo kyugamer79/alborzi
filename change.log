@@ -1,3 +1,7 @@
+@version 0.0.0.6
+-- NEW : 
+. trim templates and add single portfolio=> single-portfolio.php
+
 @version 0.0.0.5
 -- NEW : 
 . add about us page => templates/about.php

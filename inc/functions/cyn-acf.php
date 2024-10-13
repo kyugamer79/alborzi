@@ -62,6 +62,20 @@ function cyn_register_acf_portfolio_settings()
 
 	];
 
+	array_push($fields, cyn_acf_add_tab('نقشه راه'));
+
+	for ($i = 1; $i <= 3; $i++) {
+		array_push($fields, cyn_acf_add_image("road_img_$i", "تصویر $i"));
+		array_push($fields, cyn_acf_add_text("road_title_$i", "سربرگ $i", 0, 30));
+		array_push($fields, cyn_acf_add_text("road_text_$i", "متن $i", 0, 30));
+	}
+
+	array_push($fields, cyn_acf_add_tab('تصاویر پروژه'));
+
+	for ($i = 1; $i <= 8; $i++) {
+		array_push($fields, cyn_acf_add_image("project_img_$i", "تصویر $i"));
+	}
+
 	$location = [
 		[
 			[

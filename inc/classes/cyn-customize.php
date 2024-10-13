@@ -106,6 +106,27 @@ if (!class_exists('cyn_customize')) {
 				$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'file', "icon_img_$i", "آیکون شبکه اجتماعی $i");
 				$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', "icon_text_$i", "لینک شبکه اجتماعی $i");
 			}
+
+			$wp_customize->add_section(
+				'blog_hero_section',
+				[
+					'title' => 'هدر بلاگ',
+					'priority' => 1,
+					'panel' => 'cyn_header_panel'
+				]
+			);
+			$this->cyn_add_control($wp_customize, 'blog_hero_section', 'file', "blog_img", "تصویر هیرو بلاگ");
+			$this->cyn_add_control($wp_customize, 'blog_hero_section', 'text', 'blog_title', 'سربرگ بلاگ');
+
+			$wp_customize->add_section(
+				'portfolio_hero_section',
+				[
+					'title' => 'هدر نمونه کار',
+					'priority' => 1,
+					'panel' => 'cyn_header_panel'
+				]
+			);
+			$this->cyn_add_control($wp_customize, 'portfolio_hero_section', 'file', "portfolio_img", "وکتور هیرو نمونه کار");
 		}
 
 		private function cyn_register_panel_footer($wp_customize)

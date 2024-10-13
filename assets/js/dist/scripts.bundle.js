@@ -9995,13 +9995,35 @@
   register();
 
   // assets/js/modules/mouse.js
-  function mouse() {
-    const mouseCursor = document.querySelector("#mouseCursor");
-    if (!mouseCursor) return;
-    document.addEventListener("mousemove", (e) => {
-      mouseCursor.style.setProperty("--x", e.clientX + "px");
-      mouseCursor.style.setProperty("--y", e.clientY + "px");
+  var customCursor = document.getElementById("custom-cursor");
+  var teamSection = document.querySelector(".team-section");
+  document.addEventListener("mousemove", (e) => {
+    customCursor.style.left = "".concat(e.pageX, "px");
+    customCursor.style.top = "".concat(e.pageY, "px");
+  });
+  teamSection.addEventListener("mouseenter", () => {
+    customCursor.classList.add("bg-red-500", "w-10", "h-10");
+  });
+  teamSection.addEventListener("mouseleave", () => {
+    customCursor.classList.remove("bg-red-500", "w-10", "h-10");
+  });
+
+  // assets/js/modules/roadmap.js
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".roadmap-item");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
     });
-  }
-  mouse();
+    items.forEach((item) => {
+      observer.observe(item);
+    });
+  });
 })();

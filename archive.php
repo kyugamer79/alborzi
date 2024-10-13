@@ -7,15 +7,41 @@
 <section class="container gap-3">
 
 	<!-- Hero -->
-	<div class=""
-		style="background-image: url('<?php echo get_template_directory_uri() . './assets/img/Blog-hero.png' ?>');">
+	<div class="h-[515px] bg-no-repeat bg-cover overflow-hidden w-full flex justify-end p-5"
+		style="background-image: url('<?php echo get_option('blog_img') ?>');">
+
+		<div>
+			<div class="text-[#A3A3A3] text-7xl w-[550px] leading-[100px] max-md:hidden">
+				<?php echo get_option('blog_title'); ?>
+			</div>
+
+			<div class="max-[767px]:hidden flex justify-end items-center gap-1 cursor-pointer" id="button">
+				<div>
+					<a href="#blog-items" class="text-base text-zinc-500">
+						<?php _e('مشاهده مقالات', 'cyn-dm'); ?>
+					</a>
+				</div>
+
+				<div class="border border-slate-200 rounded-full p-1">
+					<a href="#blog-items" class="flex items-center">
+						<span>
+							<svg class="icon rotate-[136deg] object w-8 h-8">
+								<use href="#icon-Arrow-17" />
+							</svg>
+						</span>
+					</a>
+
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	<!-- Admin Selected Blogs -->
 	<div></div>
 
 	<!-- Blogs -->
-	<div>
+	<div id="blog-items" class="scroll-smooth">
 
 		<div class="flex justify-between border-b border-slate-200">
 
@@ -47,11 +73,6 @@
 
 		<!-- Blog Card -->
 		<div class="space-y-3 max-xl:mx-5">
-
-			<!-- Title -->
-			<div class="text-h1 max-lg:text-h4">
-				<?php _e('همه ی مقالات', 'cyn-dm') ?>
-			</div>
 
 			<div class="grid grid-cols-2 max-md:grid-cols-1 gap-3">
 				<?php
