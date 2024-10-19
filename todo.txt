@@ -10,4 +10,4 @@
 *single blog & about us quotion svg
 *service cta lottie file
 *single service swipers (steps and pics)
-*portfolio table shadow
+*opacity-black-sections

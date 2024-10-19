@@ -1,4 +1,4 @@
-<section class="grid grid-cols-5 items-center"
+<section class="grid grid-cols-5 items-center bg-no-repeat"
     style="background-image: url('<?php echo get_the_post_thumbnail_url() ?>');">
     <!-- Content -->
     <div class="col-span-2 grid gap-3 max-[767px]:col-span-5">
@@ -31,7 +31,7 @@
     </div>
 
     <!-- Image -->
-    <div class="col-span-3 max-[767px]:col-span-5">
+    <div class="col-span-3 max-[767px]:col-span-5 bg-no-repeat">
         <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full', false, ['class' => '']); ?>
     </div>
 

@@ -159,4 +159,15 @@
                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
         </g>
     </symbol>
+    <symbol id="icon-Play" viewBox="0 0 24 25">
+        <title>Play</title>
+        <g class="nc-icon-wrapper">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M21 12.061V12.061C21 17.032 16.971 21.061 12 21.061V21.061C7.029 21.061 3 17.032 3 12.061V12.061C3 7.09003 7.029 3.06104 12 3.06104V3.06104C16.971 3.06104 21 7.09003 21 12.061Z"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10.9411 9.11886L14.8231 11.4149C15.3141 11.7049 15.3141 12.4159 14.8231 12.7059L10.9411 15.0019C10.4411 15.2979 9.80908 14.9369 9.80908 14.3559V9.76486C9.80908 9.18386 10.4411 8.82286 10.9411 9.11886V9.11886Z"
+                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+        </g>
+    </symbol>
 </svg>

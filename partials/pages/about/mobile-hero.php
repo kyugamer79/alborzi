@@ -13,7 +13,7 @@ $heroText = get_field('hero_txt');
     </div>
 
     <div
-        class="container text-zinc-500 text-2xl py-4 leading-[62px] max-md:text-base max-md:leading-8 hover:text-zinc-800 transition-all duration-300">
+        class="container text-gsap text-zinc-500 text-2xl py-4 leading-[62px] max-md:text-base max-md:leading-8">
         <?php echo $heroText ?>
     </div>
 

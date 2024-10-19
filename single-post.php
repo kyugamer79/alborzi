@@ -28,7 +28,6 @@ $publishedPosts = get_posts([
 
 <section class="container grid grid-cols-4 gap-6">
 
-
     <!-- Sidebar -->
     <?php cyn_get_component('sidebar') ?>
 
@@ -84,8 +83,8 @@ $publishedPosts = get_posts([
 
             <div class="py-2"></div>
 
-            <div>
-                <?php echo the_content() ?>
+            <div class="text-gsap">
+                <?php the_content() ?>
             </div>
         </div>
 

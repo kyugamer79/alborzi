@@ -4,7 +4,7 @@
 <div class="container min-[768px]:grid hidden gap-6 mt-20">
 
     <!-- Footer Title -->
-    <div class="text-4xl text-neutral-400 hover:text-slate-950 transition-all duration-500 cursor-default">
+    <div class="footer-text-gsap text-4xl text-neutral-400 cursor-default">
         <?php echo get_option('footer_title') ?>
     </div>
 

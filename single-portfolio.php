@@ -86,10 +86,10 @@
             <?php _e('توضیحات پروژه', 'cyn-dm') ?>
         </div>
 
-        <div
-            class="text-zinc-500 text-2xl py-4 leading-[62px] max-md:text-base max-md:leading-8 hover:text-zinc-800 transition-all duration-300">
-            <?php the_content() ?>
+        <div class="text-gsap text-zinc-500 text-2xl py-4 leading-[62px] max-md:text-base max-md:leading-8">
+            <?php the_content(); ?>
         </div>
+
     </div>
 
     <div class="py-10"></div>
