@@ -5,7 +5,7 @@
     'posts_per_page' => -1,
 ]) ?>
 
-<section class="md:mx-4">
+<section class="container">
 
     <!-- Title -->
     <div class="container text-zinc-900 text-4xl">
@@ -14,7 +14,7 @@
 
     <!-- Roadmap -->
     <div class="container">
-        <div class="bg-no-repeat bg-clip-content bg-center overflow-hidden grid gap-9"
+        <div class="bg-no-repeat bg-clip-content bg-center overflow-hidden grid gap-4"
             style="background-image: url('<?php echo get_option('portfolio_img') ?>');">
             <div class="md:bg-transparent bg-white w-full h-full space-y-6">
                 <?php for ($i = 1; $i <= 3; $i++): ?>
@@ -23,10 +23,14 @@
                     $roadMapTitle = get_field("road_title_$i");
                     $roadMapText = get_field("road_text_$i");
                     ?>
-                    <div class="roadmap-item flex flex-row max-md:flex-col justify-around items-center md:even:flex-row-reverse gap-4"
-                        style="opacity: 0; transform: translateY(50px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+                    <div
+                        class="roadmap-item flex flex-col md:flex-row justify-around items-center gap-4 transition-opacity duration-600 transform md:even:flex-row-reverse <?php echo ($i % 2 == 0) ? 'md:flex-row-reverse' : ''; ?> opacity-0 translate-y-4">
+                        <!-- Image -->
+                        <div class="flex-shrink-0 mb-4 md:mb-0">
+                            <?php echo wp_get_attachment_image($roadMapImage, 'full', false, ['class' => 'max-w-full h-auto']) ?>
+                        </div>
                         <!-- Content -->
-                        <div class="flex flex-col gap-2 w-[510px] max-md:order-1">
+                        <div class="flex flex-col gap-2 w-full md:w-[510px]">
                             <!-- Title -->
                             <div class="text-2xl md:text-3xl text-neutral-700">
                                 <?php echo $roadMapTitle ?>
@@ -36,15 +40,13 @@
                                 <?php echo $roadMapText ?>
                             </div>
                         </div>
-                        <!-- Image -->
-                        <div>
-                            <?php echo wp_get_attachment_image($roadMapImage, 'full', false, ['class' => 'image']) ?>
-                        </div>
                     </div>
                 <?php endfor; ?>
             </div>
         </div>
     </div>
+
+
 
     <div class="py-10"></div>
 

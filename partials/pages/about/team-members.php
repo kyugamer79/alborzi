@@ -1,4 +1,4 @@
-<div class="team-section bg-black mx-0 px-10 py-8 relative">
+<div class="team-section bg-black mx-0 px-10 py-8 relative" style="background-image: url(<?php echo CYN_THEME_DIR . '/assets/img/opacity-black-sections.png'?>);">
     <div class="text-white text-4xl max-md:text-2xl py-8">
         <?php _e('اعضای تیم بعد پنج', 'cyn-dm') ?>
     </div>

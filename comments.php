@@ -98,7 +98,7 @@
                 </div>
 
                 <!-- comment text -->
-                <div>
+                <div class="text-sm">
                     <?php echo $comment->comment_content; ?>
                 </div>
 
@@ -117,8 +117,8 @@
 
                         <?php foreach ($children as $child_comment): ?>
 
-                            <div>
-                                <div class="flex items-center gap-3">
+                            <div class="flex flex-col gap-8">
+                                <div class="flex items-center gap-5">
 
                                     <!-- Avatar -->
                                     <div>
@@ -138,7 +138,7 @@
                                         </div>
 
                                         <!-- Date & Time-->
-                                        <div class="flex flex-row gap-1">
+                                        <div class="flex flex-row gap-1 text-zinc-400 text-xs">
                                             <!-- Date -->
                                             <div>
                                                 <time
@@ -151,12 +151,13 @@
                                             </div>
 
                                         </div>
+                                        
                                     </div>
 
                                 </div>
 
                                 <!-- comment text -->
-                                <div>
+                                <div class="text-sm">
                                     <?php echo $child_comment->comment_content; ?>
                                 </div>
                             </div>

@@ -1,10 +1,8 @@
 <div class="bg-[#F1F5F9] min-[768px]:rounded-2xl py-5 px-8 max-[767px]:mx-0 min-[768px]:mx-10 flex flex-row max-[767px]:flex-col justify-center items-center">
 
     <div>
-        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-            type="module"></script>
 
-        <dotlottie-player src="https://lottie.host/a92ff3da-1056-4bcd-aee3-570e1fcf44b9/WGoVgYO1Ot.json"
+        <dotlottie-player src="<?php echo CYN_THEME_DIR . '/assets/anim/service-cta.lottie'?>"
             background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></dotlottie-player>
     </div>
 

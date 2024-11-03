@@ -1,6 +1,16 @@
-<?php $post_categories = get_the_category(); ?>
+<?php
 
-<?php $post_content = get_the_content(); ?>
+$post_categories = get_the_category();
+
+$post_content = get_the_content();
+
+if (is_single()) {
+    set_post_views(get_the_ID());
+}
+
+$post_views = get_post_views(get_the_ID());
+
+?>
 
 <div class="grid grid-cols-3 gap-4">
     <!-- Content -->
@@ -58,11 +68,16 @@
             </div>
 
             <!-- Views -->
-            <div>
-                
-                <svg class="icon">
-                    <use href="#icon-Eye-4" />
-                </svg>
+            <div class="flex items-center text-xs text-zinc-400">
+                <span>
+                    <svg class="icon mr-1">
+                        <use href="#icon-Eye-4" />
+                    </svg>
+                </span>
+
+                <span>
+                    <?php echo $post_views; ?>
+                </span>
             </div>
         </div>
 

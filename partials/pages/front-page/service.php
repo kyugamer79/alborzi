@@ -5,19 +5,31 @@ $services = new WP_Query([
     'posts_per_page' => -1,
 ]) ?>
 
+<div class="bg-black py-8">
 
-<div>
+    <swiper-container space-between="12" slides-per-view="auto">
 
-    <?php if ($services->have_posts()): ?>
+        <?php if ($services->have_posts()): ?>
 
-        <?php while ($services->have_posts()): ?>
+            <?php while ($services->have_posts()):
 
-            <?php $services->the_post() ?>
+                $services->the_post(); ?>
 
-            <?php cyn_get_card('front-service') ?>
+                <swiper-slide>
 
-        <?php endwhile; ?>
+                    <div class="w-full aspect-video">
 
-    <?php endif ?>
+                        <?php cyn_get_card('front-service'); ?>
+                        
+                    </div>
 
+                </swiper-slide>
+
+            <?php endwhile; ?>
+
+            <?php wp_reset_postdata(); ?>
+
+        <?php endif; ?>
+
+    </swiper-container>
 </div>

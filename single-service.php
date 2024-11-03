@@ -33,13 +33,14 @@
     <?php cyn_get_page('service/portfolio') ?>
 
     <div class="py-10"></div>
-    
-    <?php cyn_get_page('service/mobile-button')?>
+
+    <!-- Mobile Services Buttons -->
+    <?php cyn_get_page('service/mobile-button') ?>
 
     <div class="py-10"></div>
 
     <!-- CTA -->
-    <?php cyn_get_component('service-cta')?>
+    <?php cyn_get_component('service-cta') ?>
 
 </section>
 

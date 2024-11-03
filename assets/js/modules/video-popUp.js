@@ -1,18 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const videoCover = document.getElementById("video-cover");
+    const videoCoverAll = document.querySelectorAll(".video-cover");
     const popupContainer = document.getElementById("popup-container");
     const popupVideo = document.getElementById("popup-video");
     const closePopup = document.getElementById("close-popup");
     const popupContent = document.getElementById("popup-content");
 
-    if (videoCover && popupContainer && popupVideo && closePopup && popupContent) {
-        videoCover.addEventListener("click", function () {
-            popupContainer.classList.remove("hidden");
-            popupContainer.offsetHeight; 
-            popupContainer.classList.add("opacity-100");
-            popupContent.classList.remove("scale-95");
-            popupVideo.play();
-        });
+    if (
+        videoCoverAll &&
+        popupContainer &&
+        popupVideo &&
+        closePopup &&
+        popupContent) {
+        videoCoverAll.forEach((videoCover) => {
+            videoCover.addEventListener("click", function () {
+                popupContainer.classList.remove("hidden");
+                popupContainer.offsetHeight;
+                popupContainer.classList.add("opacity-100");
+                popupContent.classList.remove("scale-95");
+                popupVideo.play();
+            });
+        })
 
         closePopup.addEventListener("click", function () {
             popupVideo.pause();
@@ -31,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     } else {
         console.warn('One or more elements are not found:', {
-            videoCover: videoCover,
+            videoCoverAll: videoCoverAll,
             popupContainer: popupContainer,
             popupVideo: popupVideo,
             closePopup: closePopup,

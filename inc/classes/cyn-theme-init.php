@@ -57,6 +57,11 @@ if (!class_exists('cyn_theme_init')) {
 			wp_dequeue_style('wp-block-library');
 
 			wp_enqueue_script('cyn-theme', get_stylesheet_directory_uri() . $js_path, ['jquery'], $this->ver, true);
+
+			wp_localize_script( 'cyn-theme', 'restDetails', [ 
+				'url' => rest_url(),
+			] );
+
 			wp_enqueue_script(
 				'dotlottie-player', 
 				'https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs',
@@ -64,6 +69,8 @@ if (!class_exists('cyn_theme_init')) {
 				null, 
 				true 
 			);
+
+
 			wp_dequeue_script('global-styles');
 		}
 

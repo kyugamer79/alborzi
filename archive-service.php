@@ -1,5 +1,9 @@
 <?php get_header() ?>
 
+<div id="customCursor"
+    class="hidden fixed w-20 h-20 bg-cover bg-center rounded-full pointer-events-none z-50 transform transition-transform duration-100">
+</div>
+
 <section class="container">
 
     <!-- Title -->

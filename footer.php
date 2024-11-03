@@ -7,6 +7,8 @@
 		<?php cyn_get_part('/footer/desktop-footer') ?>
 		<?php cyn_get_part('/footer/mobile-footer') ?>
 	</footer>
+
+
 <?php endif; ?>
 
 <div class="wp-scripts">

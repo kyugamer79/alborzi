@@ -9,9 +9,9 @@
             <?php if (empty($image))
                 continue; ?>
 
-            <swiper-slide class="max-h-[520px] object-cover">
+            <swiper-slide class="object-cover">
 
-                <?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'w-full h-[520px] rounded-[32px]']) ?>
+                <?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'w-full h-[196px] md:h-[520px] rounded-[32px]']) ?>
 
             </swiper-slide>
 

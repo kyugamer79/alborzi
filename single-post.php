@@ -19,9 +19,16 @@ $publishedPosts = get_posts([
     'fields' => 'ids'
 ]);
 
+$post_categories = get_the_category();
+
+if (is_single()) {
+    set_post_views(get_the_ID());
+}
+
+$post_views = get_post_views(get_the_ID());
+
 ?>
 
-<?php $post_categories = get_the_category(); ?>
 
 <!-- BreadCrumb -->
 <?php cyn_get_component('breadcrumb') ?>
@@ -49,7 +56,7 @@ $publishedPosts = get_posts([
                     <?php echo get_the_date() ?>
                 </div>
 
-                <!-- Category & Viwes -->
+                <!-- Category & Views -->
                 <div class="flex flex-row justify-between items-center gap-5">
                     <div>
                         <?php foreach ($post_categories as $term): ?>
@@ -63,12 +70,19 @@ $publishedPosts = get_posts([
                         <?php endforeach; ?>
                     </div>
 
-                    <div class="text-xs text-zinc-400">
-                        <svg class="icon">
-                            <use href="#icon-Eye-4" />
-                        </svg>
+                    <div class="flex items-center text-xs text-zinc-400">
+                        <span>
+                            <svg class="icon mr-1">
+                                <use href="#icon-Eye-4" />
+                            </svg>
+                        </span>
+
+                        <span>
+                            <?php echo $post_views; ?>
+                        </span>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -83,7 +97,7 @@ $publishedPosts = get_posts([
 
             <div class="py-2"></div>
 
-            <div class="text-gsap">
+            <div>
                 <?php the_content() ?>
             </div>
         </div>

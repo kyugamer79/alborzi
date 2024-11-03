@@ -32,6 +32,7 @@ if (!class_exists('cyn_register')) {
 			$this->cyn_make_post_type(CYN_SERVICE_POST_TYPE, 'خدمت', 'خدمات', 'dashicons-admin-generic', ['title', 'thumbnail', 'editor']);
 			$this->cyn_make_post_type(CYN_PORTFOLIO_POST_TYPE, 'نمونه کار', 'نمونه کارها', 'dashicons-format-aside', ['title', 'thumbnail', 'editor']);
 			$this->cyn_make_post_type(CYN_FAQ_POST_TYPE, 'سوال', 'سوالات متداول', 'dashicons-format-chat', ['title', 'editor']);
+			$this->cyn_make_post_type(CYN_FORM_POST_TYPE, 'فرم', 'فرم ها', 'dashicons-format-chat', ['title']);
 		}
 
 		public function cyn_taxonomy_register()

@@ -1,21 +1,20 @@
 <!-- Archive Blog Page -->
-<?php get_header() ?>
+<?php get_header(); ?>
 
 <!-- Breadcrumb -->
-<?php cyn_get_component('breadcrumb') ?>
+<?php cyn_get_component('breadcrumb'); ?>
 
 <section class="container gap-3">
 
 	<!-- Hero -->
 	<div class="h-[515px] bg-no-repeat bg-cover overflow-hidden w-full flex justify-end p-5"
-		style="background-image: url('<?php echo get_option('blog_img') ?>');">
-
+		style="background-image: url('<?php echo esc_url(get_option('blog_img')); ?>');">
 		<div>
-			<div class="text-[#A3A3A3] text-7xl w-[550px] leading-[100px] max-md:hidden">
-				<?php echo get_option('blog_title'); ?>
+			<div class="text-[#A3A3A3] text-7xl w-[550px] leading-[100px] max-md:text-5xl max-md:w-full">
+				<?php echo esc_html(get_option('blog_title')); ?>
 			</div>
 
-			<div class="max-[767px]:hidden flex justify-end items-center gap-1 cursor-pointer" id="button">
+			<div class="flex justify-end items-center gap-1 cursor-pointer max-md:flex-col" id="button">
 				<div>
 					<a href="#blog-items" class="text-base text-zinc-500">
 						<?php _e('مشاهده مقالات', 'cyn-dm'); ?>
@@ -25,16 +24,14 @@
 				<div class="border border-slate-200 rounded-full p-1">
 					<a href="#blog-items" class="flex items-center">
 						<span>
-							<svg class="icon rotate-[136deg] object w-8 h-8">
-								<use href="#icon-Arrow-17" />
+							<svg class="icon rotate-[136deg] w-8 h-8">
+								<use href="#icon-Arrow-17"></use>
 							</svg>
 						</span>
 					</a>
-
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 	<!-- Admin Selected Blogs -->
@@ -43,10 +40,10 @@
 	<!-- Blogs -->
 	<div id="blog-items" class="scroll-smooth">
 
-		<div class="flex justify-between border-b border-slate-200">
+		<div class="hidden md:flex justify-between border-b border-slate-200 pb-3">
 
 			<div class="text-4xl text-zinc-900">
-				<?php _e('دسته بندی ها', 'cyn-dm') ?>
+				<?php _e('دسته بندی ها', 'cyn-dm'); ?>
 			</div>
 
 			<!-- Blogs Category -->
@@ -59,9 +56,9 @@
 					]);
 					?>
 					<?php foreach ($terms as $term): ?>
-						<a href="<?php echo get_term_link($term); ?>"
-							class="px-3 py-2 font-sm <?php echo (is_tax('category', $term->term_id)) ? 'text-zinc-900 border-slate-200' : 'text-zinc-900 border-transparent active:border-teal-600'; ?> border-b-2">
-							<?php echo $term->name ?>
+						<a href="<?php echo esc_url(get_term_link($term)); ?>"
+							class="px-3 py-2 text-sm <?php echo (is_tax('category', $term->term_id)) ? 'text-zinc-900 border-slate-200' : 'text-zinc-900 border-transparent'; ?> border-b-2 active:border-teal-600">
+							<?php echo esc_html($term->name); ?>
 						</a>
 					<?php endforeach; ?>
 				</nav>
@@ -87,13 +84,11 @@
 			</div>
 
 			<!-- Pagination -->
-			<?php cyn_get_component('pagination') ?>
+			<?php cyn_get_component('pagination'); ?>
 
 		</div>
 	</div>
 
-	<!-- Pagination -->
-	<?php cyn_get_component('pagination') ?>
-
 </section>
-<?php get_footer() ?>
+
+<?php get_footer(); ?>

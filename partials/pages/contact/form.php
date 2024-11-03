@@ -1,6 +1,6 @@
 <div class="col-span-3 lg:col-span-2 grid gap-7 max-[1023px]:order-2">
 
-    <div class="space-y-7">
+    <form id="contact-form"c class="space-y-7">
 
         <!-- Title -->
         <div class="text-5xl text-zinc-900 max-[1024px]:hidden">
@@ -19,7 +19,7 @@
             <div class="form-group col-span-1 max-lg:col-span-2">
                 <input placeholder="شماره تماس" type="text"
                     class="form-control w-full text-base text-zinc-400 rounded-[40px] border border-slate-200 bg-zinc-100 p-4 focus-visible:border-zinc-500 focus:text-zinc-600 transition-all duration-300 focus:ring-0"
-                    name="text">
+                    name="tel">
             </div>
         </div>
 
@@ -29,12 +29,12 @@
                 name="comment"></textarea>
         </div>
 
-        <div class="form-submit flex justify-end max-lg:justify-center items-center gap-2">
+        <button type="submit" class="form-submit flex justify-end max-lg:justify-center items-center gap-2">
             <svg class="icon rotate-45 object border border-slate-200 rounded-full p-2 size-12 cursor-pointer">
                 <use href="#icon-Arrow-17" />
             </svg>
             <div class="text-zinc-600 text-sm cursor-pointer"><?php _e('ارسال پیام', 'cyn-dm') ?></div>
-        </div>
+        </button>
 
 
         <!-- Contact Ways -->
@@ -90,6 +90,6 @@
                 </a>
             </div>
         </section>
-    </div>
+    <form/>
 
 </div>

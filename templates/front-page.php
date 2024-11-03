@@ -10,15 +10,13 @@
 
     <div class="py-6 md:py-12"></div>
 
-    <?php //cyn_get_page('front-page/service') ?>
+    <?php cyn_get_page('front-page/service') ?>
 
     <div class="py-6 md:py-12"></div>
 
     <?php cyn_get_page('front-page/portfolio') ?>
 
-
     <?php cyn_get_page('front-page/team') ?>
-
 
     <?php cyn_get_page('front-page/about') ?>
 

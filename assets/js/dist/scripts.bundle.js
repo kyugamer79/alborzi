@@ -9994,6 +9994,26 @@
   // assets/js/modules/swiper.js
   register();
 
+  // assets/js/modules/mouse.js
+  document.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.getElementById("customCursor");
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = "".concat(e.clientX, "px");
+      cursor.style.top = "".concat(e.clientY, "px");
+    });
+    const cards = document.querySelectorAll(".card-container");
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        const imageUrl = card.querySelector("img").src;
+        cursor.style.backgroundImage = "url(".concat(imageUrl, ")");
+        cursor.classList.remove("hidden");
+      });
+      card.addEventListener("mouseleave", () => {
+        cursor.classList.add("hidden");
+      });
+    });
+  });
+
   // assets/js/modules/roadmap.js
   document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".roadmap-item");
@@ -10015,18 +10035,20 @@
 
   // assets/js/modules/video-popUp.js
   document.addEventListener("DOMContentLoaded", function() {
-    const videoCover = document.getElementById("video-cover");
+    const videoCoverAll = document.querySelectorAll(".video-cover");
     const popupContainer = document.getElementById("popup-container");
     const popupVideo = document.getElementById("popup-video");
     const closePopup = document.getElementById("close-popup");
     const popupContent = document.getElementById("popup-content");
-    if (videoCover && popupContainer && popupVideo && closePopup && popupContent) {
-      videoCover.addEventListener("click", function() {
-        popupContainer.classList.remove("hidden");
-        popupContainer.offsetHeight;
-        popupContainer.classList.add("opacity-100");
-        popupContent.classList.remove("scale-95");
-        popupVideo.play();
+    if (videoCoverAll && popupContainer && popupVideo && closePopup && popupContent) {
+      videoCoverAll.forEach((videoCover) => {
+        videoCover.addEventListener("click", function() {
+          popupContainer.classList.remove("hidden");
+          popupContainer.offsetHeight;
+          popupContainer.classList.add("opacity-100");
+          popupContent.classList.remove("scale-95");
+          popupVideo.play();
+        });
       });
       closePopup.addEventListener("click", function() {
         popupVideo.pause();
@@ -10044,7 +10066,7 @@
       });
     } else {
       console.warn("One or more elements are not found:", {
-        videoCover,
+        videoCoverAll,
         popupContainer,
         popupVideo,
         closePopup,
@@ -16712,6 +16734,40 @@
       console.warn('No element found with the class "text-gsap"');
     }
   });
+
+  // assets/js/pages/contact.js
+  function consntactForm() {
+    const form = document.querySelector("#contact-form");
+    if (!form) {
+      console.warn("form element is not selected");
+      return;
+    }
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      jQuery(($) => {
+        $.ajax({
+          type: "POST",
+          url: restDetails.url + "cyn-api/v1/contact-form",
+          //this route must be created on backend
+          data: formData,
+          cache: false,
+          processData: false,
+          contentType: false,
+          //this happen after api call successfully
+          success: (res) => {
+            form.reset();
+            console.log(res);
+          },
+          //this happen after api call unsuccessfully
+          error: (err) => {
+            console.log(err);
+          }
+        });
+      });
+    });
+  }
+  consntactForm();
 })();
 /*! Bundled license information:
 

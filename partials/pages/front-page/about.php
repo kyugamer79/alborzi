@@ -27,20 +27,22 @@ $aboutBtnUrl = get_field('aboutـusـurl');
     </div>
 
     <!-- Button -->
-    <a href="<?php echo esc_url($aboutBtnUrl); ?>" class="max-md:text-teal-600">
-        <div class="flex justify-end items-center max-md:justify-center">
+    <div>
+        <a href="<?php echo esc_url($aboutBtnUrl); ?>" class="max-md:text-teal-600">
+            <div class="flex justify-end items-center max-md:justify-center">
 
-            <div>
-                <span>
-                    <svg class="icon rotate-45 object size-8">
-                        <use href="#icon-Arrow-17" />
-                    </svg>
-                </span>
-            </div>
+                <div>
+                    <span>
+                        <svg class="icon rotate-45 object size-8">
+                            <use href="#icon-Arrow-17" />
+                        </svg>
+                    </span>
+                </div>
 
-            <div class="text-xs text-black max-md:text-teal-600">
-                <?php _e('درباره ما', 'cyn-dm') ?>
+                <div class="text-xs text-black max-md:text-teal-600">
+                    <?php _e('درباره ما', 'cyn-dm') ?>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
 </div>
