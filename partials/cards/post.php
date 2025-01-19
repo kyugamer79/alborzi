@@ -2,6 +2,8 @@
 
 $post_categories = get_the_category();
 
+$post_title = get_the_title();
+
 $post_content = get_the_content();
 
 if (is_single()) {
@@ -12,13 +14,13 @@ $post_views = get_post_views(get_the_ID());
 
 ?>
 
-<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-row gap-8">
     <!-- Content -->
     <div class="col-span-2 grid gap-2">
         <!-- Date & Category -->
         <div class="flex flex-row justify-start items-center gap-5">
             <!-- Date -->
-            <div class="text-sm text-neutral-400 flex flex-row items-baseline justify-center gap-2">
+            <div class="text-xs md:text-sm text-neutral-400 flex flex-row items-baseline justify-center gap-2 whitespace-nowrap">
                 <div
                     class=" bg-teal-600 relative after:absolute after:rounded-full isolate after:-z-10 after:animate-pulse after:bg-teal-50 after:content-[''] after:inset-0 shadow-xl rounded-full size-3 flex justify-center items-center">
                 </div>
@@ -28,7 +30,7 @@ $post_views = get_post_views(get_the_ID());
             <!-- Category -->
             <div>
                 <?php foreach ($post_categories as $term): ?>
-                    <a href="<?php echo get_term_link($term) ?>" class="text-xs text-zinc-900">
+                    <a href="<?php echo get_term_link($term) ?>" class="text-xs text-zinc-900 whitespace-nowrap">
                         <?php if ($term === end($post_categories)): ?>
                             <?php echo $term->name ?>
                         <?php else: ?>
@@ -41,34 +43,41 @@ $post_views = get_post_views(get_the_ID());
         </div>
 
         <!-- Title & Content-->
-        <div class="grid gap-1">
+        <div class="grid gap-1 lg:w-[235px] w-[196px]">
             <!-- Title -->
-            <div clas="text-lg">
-                <?php echo the_title() ?>
+            <div class="text-lg lg:text-wrap">
+                <?php echo wp_trim_words($post_title, 3) ?>
             </div>
 
             <!-- Content -->
             <div class="text-xs text-zinc-500">
-                <?php echo wp_trim_words($post_content, 8) ?>
+                <?php echo wp_trim_words($post_content, 5) ?>
             </div>
         </div>
 
         <!-- Views & Btn  -->
-        <div class="flex flex-row justify-between">
+        <div class="flex flex-row justify-between items-center">
 
             <!-- Btn -->
-            <div class="border border-slate-200 rounded-full p-1">
+            <div>
                 <a href="<?php echo get_the_permalink() ?>">
-                    <span>
-                        <svg class="icon rotate-45 object">
-                            <use href="#icon-Arrow-17" />
-                        </svg>
-                    </span>
+                    <div class="flex flex-row gap-2 items-center whitespace-nowrap">
+                        
+                        <div class="border border-slate-200 rounded-full p-1">
+                            <svg class="icon rotate-45 object">
+                                <use href="#icon-Arrow-17" />
+                            </svg>
+                        </div>
+
+                        <div class="text-xs md:text-sm text-zinc-600">
+                            <?php _e('مطالعه مقاله', 'cyn-dm') ?>
+                        </div>
+                    </div>
                 </a>
             </div>
 
             <!-- Views -->
-            <div class="flex items-center text-xs text-zinc-400">
+            <div class="flex items-center text-xs text-zinc-400 whitespace-nowrap">
                 <span>
                     <svg class="icon mr-1">
                         <use href="#icon-Eye-4" />
@@ -86,7 +95,7 @@ $post_views = get_post_views(get_the_ID());
     <!-- Image -->
     <div class="col-span-1">
         <a href="<?php echo get_permalink() ?>">
-            <?php echo get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'rounded-xl aspect-square object-cover h-full']) ?>
+            <?php echo get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'rounded-xl aspect-square object-cover lg:w-[235px] lg:h-[216px] h-[112px] w-[118px]']) ?>
         </a>
     </div>
 </div>

@@ -22,7 +22,7 @@ $aboutBtnUrl = get_field('aboutـusـurl');
     </div>
 
     <!-- Text -->
-    <div class="text-gsap text-3xl text-neutral-400 max-md:text-base max-md:leading-8 leading-[62px]">
+    <div class="text-gsap text-3xl max-md:text-base max-md:leading-8 leading-[62px]">
         <?php echo $aboutText ?>
     </div>
 

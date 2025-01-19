@@ -12,11 +12,11 @@ $post_views = get_post_views(get_the_ID());
 
 ?>
 
-<div class="grid grid-cols-3 gap-4">
+<div class="grid grid-cols-3 gap-2">
     <!-- Content -->
     <div class="col-span-2 grid gap-2">
         <!-- Date & Category -->
-        <div class="flex flex-row justify-start items-center gap-5">
+        <div class="flex flex-row justify-between items-center gap-5">
             <!-- Date -->
             <div class="text-sm text-neutral-400 flex flex-row items-baseline justify-center gap-2">
                 <div
@@ -49,18 +49,18 @@ $post_views = get_post_views(get_the_ID());
 
             <!-- Content -->
             <div class="text-xs text-zinc-500">
-                <?php echo wp_trim_words($post_content, 8) ?>
+                <?php echo wp_trim_words($post_content, 5) ?>
             </div>
         </div>
 
         <!-- Views & Btn  -->
-        <div class="flex flex-row justify-between">
+        <div class="group flex flex-row justify-between items-center">
 
             <!-- Btn -->
-            <div class="border border-slate-200 rounded-full p-1">
+            <div class="border border-slate-200 rounded-full p-1  bg-white group-hover:bg-teal-600 transition-all duration-300">
                 <a href="<?php echo get_the_permalink() ?>">
                     <span>
-                        <svg class="icon rotate-45 object">
+                        <svg class="icon rotate-45 object group-hover:text-white transition-all duration-300">
                             <use href="#icon-Arrow-17" />
                         </svg>
                     </span>
@@ -84,9 +84,9 @@ $post_views = get_post_views(get_the_ID());
     </div>
 
     <!-- Image -->
-    <div class="col-span-1">
+    <div class="col-span-1 h-[112px]">
         <a href="<?php echo get_permalink() ?>">
-            <?php echo get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'rounded-xl aspect-square object-cover h-full']) ?>
+            <?php echo get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'rounded-xl aspect-square object-cover w-[118px]']) ?>
         </a>
     </div>
 </div>

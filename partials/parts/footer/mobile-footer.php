@@ -11,9 +11,9 @@
     <div class="text-zinc-400">
         <div class="divide-y">
             <?php foreach ($footer_mobile_menu as $index => $menu_item): ?>
-                <div class="text-lg text-center py-4 menu-item items-center first:before:content-['.'] first:before:w-3 first:before:h-1 first:before:rounded-full first:text-teal-600">
+                <div class="text-lg text-center py-4 menu-item">
                     <a href="<?php echo $menu_item->url ?>"
-                        class="hover:text-neutral-950 transition-colors <?php echo $menu_item->child_items ? 'has-child' : 'no-child' ?>"
+                        class="max-lg:text-sm hover:before:content-[''] hover:before:w-3 hover:before:h-1 hover:before:rounded-full hover:before:bg-teal-600 hover:text-teal-600 flex gap-3 justify-center items-center text-lg transition-all duration-300 <?php echo $menu_item->child_items ? 'has-child' : 'no-child' ?>"
                         data-id="<?php echo $menu_item->ID ?>">
                         <span>
                             <?php echo $menu_item->title ?>
@@ -23,15 +23,26 @@
             <?php endforeach; ?>
         </div>
 
-        <div class="divide-y">
-            <?php for ($i = 1; $i <= 3; $i++): ?>
-                <div class="py-4 text-center first:border-t">
-                    <a class="text-lg hover:text-slate-950 transition-all duration-500"
-                        href="<?php echo get_option("title_link_$i", '#') ?>">
-                        <?php echo get_option("title_$i") ?>
-                    </a>
-                </div>
-            <?php endfor ?>
+        <div>
+            <!-- Price PopUp -->
+            <div class="border-t py-4">
+                <a id="menuItem3"
+                    class="max-lg:text-sm hover:before:content-[''] hover:before:w-3 hover:before:h-1 hover:before:rounded-full hover:before:bg-teal-600 hover:text-teal-600 flex gap-3 justify-center items-center text-lg transition-all duration-300"
+                    href="<?php echo get_option("price_title_link", '#') ?>">
+                    <?php echo get_option("price_title") ?>
+                </a>
+            </div>
+
+            <div class="divide-y">
+                <?php for ($i = 1; $i <= 2; $i++): ?>
+                    <div class="py-4 text-center first:border-t">
+                        <a class="max-lg:text-sm hover:before:content-[''] hover:before:w-3 hover:before:h-1 hover:before:rounded-full hover:before:bg-teal-600 hover:text-teal-600 flex gap-3 justify-center items-center text-lg transition-all duration-300"
+                            href="<?php echo get_option("title_link_$i", '#') ?>">
+                            <?php echo get_option("title_$i") ?>
+                        </a>
+                    </div>
+                <?php endfor ?>
+            </div>
         </div>
     </div>
 
@@ -44,7 +55,7 @@
                     <?php echo get_option('footer_title_phone') ?>
                 </div>
                 <a class="group" href="<?php echo 'tel:' . get_option('desktop_menu_phone') ?>">
-                    <div class="text-xs grid gap-2 hover:text-slate-950 transition-all duration-500 cursor-pointer ">
+                    <div class="text-xs grid gap-2 hover:text-teal-600  transition-all duration-500 cursor-pointer ">
                         <?php echo get_option('desktop_menu_phone') ?>
                     </div>
                 </a>
@@ -56,7 +67,7 @@
                     <?php echo get_option('footer_title_email') ?>
                 </div>
                 <a href="<?php echo 'mailto:' . get_option('desktop_menu_mail') ?>">
-                    <div class="flex gap-2 text-xs hover:text-slate-950 transition-all duration-500 cursor-pointer">
+                    <div class="flex gap-2 text-xs hover:text-teal-600  transition-all duration-500 cursor-pointer">
                         <?php echo get_option('desktop_menu_mail') ?>
                     </div>
                 </a>
@@ -69,7 +80,7 @@
                 <?php echo get_option('footer_address_title') ?>
             </div>
             <a href="<?php echo 'mailto:' . get_option('footer_address') ?>">
-                <div class="flex f-column text-xs hover:text-slate-950 transition-all duration-500 cursor-pointer">
+                <div class="flex f-column text-xs hover:text-teal-600  transition-all duration-500 cursor-pointer">
                     <?php echo get_option('footer_address') ?>
                 </div>
             </a>
@@ -86,7 +97,7 @@
     </div>
 
     <!-- Cyan Name -->
-    <div class="text-xs text-zinc-400 text-center">
+    <div class="text-xs text-zinc-400 text-center py-4">
         طراحی و توسعه توسط شرکت سایان
     </div>
 

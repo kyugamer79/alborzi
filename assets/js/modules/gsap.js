@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const words = textContainer.querySelectorAll('span');
 
         gsap.fromTo(words, {
-            color: "#71717A"
+            color: "#A3A3A3"
         }, {
-            color: "#27272A",
+            color: "#1C1917",
             duration: 1,
             stagger: 0.1,
             scrollTrigger: {
@@ -74,3 +74,5 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('No element found with the class "text-gsap"');
     }
 });
+
+// Front Page Service Section

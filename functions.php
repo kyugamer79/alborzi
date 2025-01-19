@@ -24,7 +24,7 @@ require_once(__DIR__ . '/inc/functions/cyn-acf-fields.php');
 require_once(__DIR__ . '/inc/functions/cyn-acf.php');
 
 //instance classes
-new cyn_theme_init(false, '0.0.0');
+new cyn_theme_init(false, '1.1.0');
 new cyn_register();
 new cyn_customize();
 new cyn_rest();

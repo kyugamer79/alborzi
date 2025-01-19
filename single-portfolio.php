@@ -5,7 +5,7 @@
     'posts_per_page' => -1,
 ]) ?>
 
-<section class="container">
+<section>
 
     <!-- Title -->
     <div class="container text-zinc-900 text-4xl">
@@ -45,8 +45,6 @@
             </div>
         </div>
     </div>
-
-
 
     <div class="py-10"></div>
 

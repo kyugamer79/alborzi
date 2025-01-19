@@ -10,21 +10,61 @@ $heroNumberBg = get_field('front_hero_bg_number');
     <!-- Title & Video -->
     <div class="col-span-2 flex flex-col gap-16 mt-16">
         <!-- Title -->
-        <div class="group text-8xl font-bold text-neutral-400 relative cursor-pointer">
+        <div class="text-8xl font-bold text-neutral-400 relative cursor-pointer">
 
-            <span class="relative inline-block">
-                <span class="relative group-hover:text-black transition-all duration-300">
-                    <?php _e('ما', 'cyn-dm') ?>
+            <span class="relative inline-block group">
+                <span class="relative hover:text-black transition-all duration-300">
+                    <span class="hover-trigger"><?php _e('ما', 'cyn-dm') ?></span>
                 </span>
 
                 <span
-                    class="absolute -z-[10] inset-0 w-20 h-20 bg-[#0000000A] rounded-full group-hover:scale-100 scale-0 transition-all duration-300">
+                    class="absolute -z-[10] inset-0 w-20 h-20 bg-neutral-400/25 rounded-full group-hover:scale-100 scale-0 transition-all duration-300">
                 </span>
 
             </span>
 
-            <span>
-                <?php _e('به رویـــاهاتون شکل میدیم', 'cyn-dm') ?>
+            <span class="relative inline-block group">
+                <span class="relative hover:text-black transition-all duration-300">
+                    <span class="hover-trigger"><?php _e('به', 'cyn-dm') ?></span>
+                </span>
+
+                <span
+                    class="absolute -z-[10] inset-0 w-20 h-20 bg-neutral-400/25 rounded-full group-hover:scale-100 scale-0 transition-all duration-300">
+                </span>
+
+            </span>
+
+            <span class="relative inline-block group">
+                <span class="relative hover:text-black transition-all duration-300">
+                    <span class="hover-trigger"><?php _e('رویـــاهاتون', 'cyn-dm') ?></span>
+                </span>
+
+                <span
+                    class="absolute -z-[10] inset-0 w-20 h-20 bg-neutral-400/25 rounded-full group-hover:scale-100 scale-0 transition-all duration-300">
+                </span>
+
+            </span>
+
+            <span class="relative inline-block group">
+                <span class="relative hover:text-black transition-all duration-300">
+                    <span class="hover-trigger"><?php _e('شکل', 'cyn-dm') ?></span>
+                </span>
+
+                <span
+                    class="absolute -z-[10] inset-0 w-20 h-20 bg-neutral-400/25 rounded-full group-hover:scale-100 scale-0 transition-all duration-300">
+                </span>
+
+            </span>
+
+            <span class="relative inline-block group">
+                <span class="relative hover:text-black transition-all duration-300">
+                    <span class="hover-trigger"><?php _e('میدیم', 'cyn-dm') ?></span>
+                </span>
+
+                <span
+                    class="absolute -z-[10] inset-0 w-20 h-20 bg-neutral-400/25 rounded-full group-hover:scale-100 scale-0 transition-all duration-300">
+                </span>
+
             </span>
         </div>
 

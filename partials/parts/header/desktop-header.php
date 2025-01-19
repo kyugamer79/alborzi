@@ -18,20 +18,24 @@
     </div>
 
     <!-- search -->
-    <div class="flex items-center flex-grow cursor-pointer">
-        <form class="w-full mx-48 max-lg:mx-4">
+    <div class="flex items-center flex-grow">
+        <form class="w-full mx-48 max-lg:mx-4" action="/" method="GET">
             <div class="relative flex items-center">
-                <div class="absolute inset-y-0 start-0 flex items-center ps-3">
-                    <svg class="icon text-zinc-600">
-                        <use href="#icon-Search,-Loupe" />
-                    </svg>
-                </div>
-                <input type="search" id="default-search"
+                <a href="/?search-type=all&s=">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3">
+                        <svg class="icon text-zinc-600">
+                            <use href="#icon-Search,-Loupe" />
+                        </svg>
+                    </div>
+                </a>
+
+                <input type="search" id="search" value="<?php the_search_query()?>"
                     class="block rounded-full w-full py-3 pl-4 pr-9 text-base placeholder:text-zinc-600 text-zinc-600 bg-zinc-100 border border-slate-200"
-                    placeholder="جستجو کن" required />
+                    placeholder="جستجو کن" name="s" required />
             </div>
         </form>
     </div>
+
 
     <!-- logo & call -->
     <div class="flex gap-5 items-center">

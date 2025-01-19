@@ -20,7 +20,7 @@ $services = new WP_Query([
                     <div class="w-full aspect-video">
 
                         <?php cyn_get_card('front-service'); ?>
-                        
+
                     </div>
 
                 </swiper-slide>

@@ -39,7 +39,7 @@ $post_views = get_post_views(get_the_ID());
     <?php cyn_get_component('sidebar') ?>
 
     <!-- Paragraph -->
-    <section class="col-span-3 max-lg:col-span-4 md:max-[1407px]:ms-6">
+    <section class="col-span-3 max-xl:col-span-4 md:max-[1407px]:ms-6">
         <div class="grid gap-2">
             <!-- Feature Image -->
             <div>

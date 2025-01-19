@@ -19,21 +19,22 @@ $publishedPosts = new WP_Query([
 
 ?>
 
-<section class="col-span-1 max-lg:col-span-4 max-lg:order-2">
+<section class="col-span-1 max-xl:col-span-4 max-xl:order-1">
     <div class="h-full">
-        <div class="grid justify-evenly sticky top-3 space-y-3">
+        <div class="grid sticky top-3 space-y-3">
+            
             <!-- Search -->
-            <div class="flex items-center flex-grow cursor-pointer">
-                <form class="w-full max-lg:mx-4">
+            <div class="max-xl:hidden flex items-center flex-grow cursor-pointer">
+                <form class="w-full max-lg:mx-4" action="/" method="GET">
                     <div class="relative flex items-center">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3">
                             <svg class="icon text-zinc-600">
                                 <use href="#icon-Search,-Loupe" />
                             </svg>
                         </div>
-                        <input type="search" id="default-search"
+                        <input type="search" id="search" value="<?php the_search_query()?>"
                             class="block rounded-full w-full py-3 pl-4 pr-9 text-base placeholder:text-zinc-600 text-zinc-600 bg-zinc-100 border border-slate-200"
-                            placeholder="جستجو کن" required />
+                            placeholder="جستجو کن" name="s" required />
                     </div>
                 </form>
             </div>
@@ -70,14 +71,14 @@ $publishedPosts = new WP_Query([
             </div>
 
             <!-- New Published Posts -->
-            <div class="bg-primary-100 p-5 rounded-3xl">
+            <div class="max-xl:hidden bg-primary-100 rounded-3xl">
                 <div class="text-h6 font-medium">
                     <?php _e('تازه منتشر شده ها', 'cyn-dm') ?>
                 </div>
 
                 <div class="py-2"></div>
 
-                <div class="grid gap-y-4">
+                <div class="grid gap-7">
 
                     <?php
                     if ($publishedPosts->have_posts()):

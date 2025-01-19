@@ -70,3 +70,7 @@ function cyn_get_part($name, $args = [])
 function cyn_get_page( $name, $args = [] ) {
 	get_template_part( '/partials/pages/' . $name, null, $args );
 }
+
+function cyn_get_popup( $name, $args = [] ) {
+	get_template_part( '/partials/popups/' . $name, null, $args );
+}

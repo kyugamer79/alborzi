@@ -7,7 +7,7 @@ $portfolioNumber = get_field('portfolio_number');
 ?>
 
 <a href="<?php echo get_the_permalink() ?>">
-    <div class="group hover:cursor-pointer flex flex-col justify-end min-h-[350px] rounded-[40px] bg-cover p-5 overflow-hidden after:content-[''] after:inset-0 after:absolute relative  after:bg-gradient-to-t after:from-black/80 after:via-black/50 after:to-black/0 isolate after:rounded-[inherit] after:z-[-1]"
+    <div class="group hover:cursor-pointer flex flex-col justify-end min-h-[350px] rounded-[40px] bg-cover p-5 overflow-hidden after:content-[''] after:inset-0 after:absolute relative after:bg-gradient-to-t after:from-black/80 after:via-black/50 after:to-black/0 isolate after:rounded-[inherit] after:z-[-1]"
         style="background-image: url('<?php echo get_the_post_thumbnail_url() ?>');">
 
         <!-- Caption -->

@@ -12,9 +12,20 @@
 
         <!-- Options -->
         <div class="grid gap-8 text-zinc-400">
-            <?php for ($i = 1; $i <= 3; $i++): ?>
-                <a class="hover:text-slate-950 transition-all duration-500" href="<?php echo get_option("title_link_$i", '#') ?>">
-                    <?php echo get_option("title_$i")?>
+
+            <!-- Price PopUp -->
+            <div>
+                <a id="menuItem1" class="hover:text-slate-950 transition-all duration-500"
+                    href="<?php echo get_option("price_title_link", '#') ?>">
+                    <?php echo get_option("price_title") ?>
+                </a>
+            </div>
+
+
+            <?php for ($i = 1; $i <= 2; $i++): ?>
+                <a class="hover:text-slate-950 transition-all duration-500"
+                    href="<?php echo get_option("title_link_$i", '#') ?>">
+                    <?php echo get_option("title_$i") ?>
                 </a>
             <?php endfor ?>
         </div>

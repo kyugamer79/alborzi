@@ -45,6 +45,7 @@ if (!class_exists('cyn_register')) {
 		{
 			//This terms can't be removed
 
+			wp_insert_term('نوشته های ویژه', 'category', ['slug' => 'special-post']);
 
 			// wp_insert_term( 'name', 'taxonomy', [ 'slug' => 'slug' ] );
 		}

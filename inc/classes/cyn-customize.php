@@ -11,6 +11,8 @@ if (!class_exists('cyn_customize')) {
 		public function cyn_basic_settings($wp_customize)
 		{
 
+			$this->cyn_register_panel_general($wp_customize);
+			$this->cyn_register_panel_popUpForm($wp_customize);
 			$this->cyn_register_panel_header($wp_customize);
 			$this->cyn_register_panel_footer($wp_customize);
 		}
@@ -62,6 +64,65 @@ if (!class_exists('cyn_customize')) {
 			}
 		}
 
+		private function cyn_register_panel_general($wp_customize)
+		{
+
+			$wp_customize->add_panel(
+				'general',
+				[
+					'title' => 'تنظیمات تم - عمومی',
+					'priority' => 1
+				]
+			);
+
+			$wp_customize->add_section(
+				'404_img',
+				[
+					'title' => 'لوگو 404',
+					'priority' => 1,
+					'panel' => 'general'
+				]
+			);
+
+			$this->cyn_add_control($wp_customize, '404_img', 'file', "cyn_custom_404_logo", "لوگو 404");
+
+		}
+
+		private function cyn_register_panel_popUpForm($wp_customize)
+		{
+			$wp_customize->add_panel(
+				'popUp_form',
+				[
+					'title' => 'تنظیمات پاپ آپ فرم',
+					'priority' => 1
+				]
+			);
+
+			$wp_customize->add_section(
+				'form_title',
+				[
+					'title' => 'تایتل فرم پاپ آپ',
+					'priority' => 1,
+					'panel' => 'popUp_form'
+				]
+			);
+
+			$this->cyn_add_control($wp_customize, 'form_title', 'text', "cyn_form_title", "تایتل فرم");
+
+			$wp_customize->add_section(
+				'form_phone_call',
+				[
+					'title' => 'شماره تماس',
+					'priority' => 1,
+					'panel' => 'popUp_form'
+				]
+			);
+
+			$this->cyn_add_control($wp_customize, 'form_phone_call', 'text', "cyn_form_phone_title", "تایتل شماره تماس");
+
+			$this->cyn_add_control($wp_customize, 'form_phone_call', 'text', "cyn_form_phone_number", "شماره تماس");
+		}
+
 		private function cyn_register_panel_header($wp_customize)
 		{
 
@@ -94,7 +155,11 @@ if (!class_exists('cyn_customize')) {
 			);
 			$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', 'up_section_title', 'تیتر سمت چپ بالا');
 
-			for ($i = 1; $i <= 3; $i++) {
+			$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', "price_title", "تیتر قیمت");
+			$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', "price_title_link", "لینک تیتر قیمت");
+
+
+			for ($i = 1; $i <= 2; $i++) {
 				$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', "title_$i", "تیتر $i");
 				$this->cyn_add_control($wp_customize, 'desktop_menu_section', 'text', "title_link_$i", "لینک تیتر $i");
 			}
@@ -115,8 +180,10 @@ if (!class_exists('cyn_customize')) {
 					'panel' => 'cyn_header_panel'
 				]
 			);
-			$this->cyn_add_control($wp_customize, 'blog_hero_section', 'file', "blog_img", "تصویر هیرو بلاگ");
-			$this->cyn_add_control($wp_customize, 'blog_hero_section', 'text', 'blog_title', 'سربرگ بلاگ');
+			$this->cyn_add_control($wp_customize, 'blog_hero_section', 'file', "blog_img_desktop", "تصویر هیرو بلاگ دسکتاپ");
+			$this->cyn_add_control($wp_customize, 'blog_hero_section', 'file', "blog_img_mobile", "تصویر هیرو بلاگ موبایل");
+			$this->cyn_add_control($wp_customize, 'blog_hero_section', 'text', 'blog_title_1', 'سربرگ بلاگ 1');
+			$this->cyn_add_control($wp_customize, 'blog_hero_section', 'text', 'blog_title_2', 'سربرگ بلاگ 2');
 
 			$wp_customize->add_section(
 				'portfolio_hero_section',
