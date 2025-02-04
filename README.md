@@ -20,7 +20,7 @@ The UI/UX design for this project was created in **Figma**. You can access the d
 - **Backend:** PHP  
 - **Database:** MySQL  
 - **CMS:** WordPress
-- 
+  
 ---
 
 Let me know if you need any more modifications! 🚀
