@@ -13,7 +13,7 @@ A custom **WordPress theme** designed for a **Building company**, providing a mo
 
 ### 🎨 Figma Design  
 The UI/UX design for this project was created in **Figma**. You can access the design files here:  
-[🔗 Figma Link](#) *(Replace with actual link)*  
+[🔗 Figma Link](https://www.figma.com/design/XNDaHbTFRQIuTMyj3IgL0X/alborzi-version3?node-id=2122-13063&p=f&t=kFRU5tUDiMjh39vL-0) *(Replace with actual link)*  
 
 ### 🛠️ Tech Stack  
 - **Frontend:** HTML, CSS, JavaScript, Tailwind  
